@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0BA8B156-1DC5-4D16-BC28-DFDAAC8C5C94}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Nozel</RootNamespace>
+    <AssemblyName>Nozel</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.116.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\ClasseController.cs" />
+    <Compile Include="Controller\Connexion.cs" />
+    <Compile Include="Controller\EleveController.cs" />
+    <Compile Include="Controller\ScolariteController.cs" />
+    <Compile Include="Controller\TrancheController.cs" />
+    <Compile Include="Data.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Data.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scolarite.cs" />
+    <Compile Include="Models\Tranche.cs" />
+    <Compile Include="Utils.cs" />
+    <Compile Include="Views\AjoutClasse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AjoutClasse.Designer.cs">
+      <DependentUpon>AjoutClasse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormBulletin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormBulletin.Designer.cs">
+      <DependentUpon>FormBulletin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ListeClasse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ListeClasse.Designer.cs">
+      <DependentUpon>ListeClasse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormEleve.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormEleve.Designer.cs">
+      <DependentUpon>FormEleve.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Classe.cs" />
+    <Compile Include="Models\Eleve.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\PayementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PayementForm.Designer.cs">
+      <DependentUpon>PayementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ScolariteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ScolariteForm.Designer.cs">
+      <DependentUpon>ScolariteForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AjoutClasse.resx">
+      <DependentUpon>AjoutClasse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormBulletin.resx">
+      <DependentUpon>FormBulletin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ListeClasse.resx">
+      <DependentUpon>ListeClasse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormEleve.resx">
+      <DependentUpon>FormEleve.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Views\PayementForm.resx">
+      <DependentUpon>PayementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ScolariteForm.resx">
+      <DependentUpon>ScolariteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Data.xsc">
+      <DependentUpon>Data.xsd</DependentUpon>
+    </None>
+    <None Include="Data.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Data.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Data.xss">
+      <DependentUpon>Data.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Ce projet fait référence à des packages NuGet qui sont manquants sur cet ordinateur. Utilisez l'option de restauration des packages NuGet pour les télécharger. Pour plus d'informations, consultez http://go.microsoft.com/fwlink/?LinkID=322105. Le fichier manquant est : {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+  </Target>
+</Project>

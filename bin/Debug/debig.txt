@@ -1,0 +1,4 @@
+erreur lors de la creation de la base de donne 22/07/2022 15:14:41
+erreur lors de la creation de la base de donne 22/07/2022 15:18:47
+erreur lors de la creation de la base de donne 22/07/2022 15:21:23
+base de donne creer avec succes 22/07/2022 15:22:36
