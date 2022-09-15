@@ -24,7 +24,17 @@ namespace Utils
             parent.Tag = child;
             child.BringToFront();
             child.Show();
-            //this.nameLabel.Text = active.Text;
+        }
+
+        public static int CalcAge(string date)
+        {
+            int day = int.Parse(date.Substring(0, 2));
+            int month = int.Parse(date.Substring(date.IndexOf("/") + 1, 2));
+            int year = int.Parse(date.Substring(date.IndexOf("/") + 4, 4));
+            DateTime dt = new DateTime(year, month, day);
+            DateTime now = DateTime.Today;
+            TimeSpan interval = now - dt;
+            return interval.Days/365 ;
         }
     }
 }

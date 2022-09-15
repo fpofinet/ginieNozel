@@ -56,11 +56,6 @@
     <Compile Include="Controller\EleveController.cs" />
     <Compile Include="Controller\ScolariteController.cs" />
     <Compile Include="Controller\TrancheController.cs" />
-    <Compile Include="Data.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Data.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +77,12 @@
     <Compile Include="Views\FormBulletin.Designer.cs">
       <DependentUpon>FormBulletin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\HomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\HomeForm.Designer.cs">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\ListeClasse.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +99,12 @@
     <Compile Include="Models\Eleve.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\ListeEleve.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ListeEleve.Designer.cs">
+      <DependentUpon>ListeEleve.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\PayementForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +126,9 @@
     <EmbeddedResource Include="Views\FormBulletin.resx">
       <DependentUpon>FormBulletin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\HomeForm.resx">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\ListeClasse.resx">
       <DependentUpon>ListeClasse.cs</DependentUpon>
     </EmbeddedResource>
@@ -134,23 +144,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\ListeEleve.resx">
+      <DependentUpon>ListeEleve.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\PayementForm.resx">
       <DependentUpon>PayementForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ScolariteForm.resx">
       <DependentUpon>ScolariteForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Data.xsc">
-      <DependentUpon>Data.xsd</DependentUpon>
-    </None>
-    <None Include="Data.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Data.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Data.xss">
-      <DependentUpon>Data.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

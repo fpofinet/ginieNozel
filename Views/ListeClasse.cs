@@ -12,10 +12,11 @@ using System.Windows.Forms;
 using Nozel;
 using Nozel.Views;
 
-namespace Nozel.Forms
+namespace Nozel.Views
 {
     public partial class FormClasse : Form
     {
+        ClasseController cl = new ClasseController();
         public FormClasse()
         {
             InitializeComponent();
@@ -25,19 +26,17 @@ namespace Nozel.Forms
 
         private void LoadData()
         {
-            ClasseController cl = new ClasseController();
+            //ClasseController cl = new ClasseController();
             List<Classe> classes = new List<Classe>();
             classes = cl.FindAll();
-            tableauClasse.Rows.Clear(); 
+            classeDataGrid.Rows.Clear(); 
             foreach (Classe elt in classes)
             {
-                //tableauClasse
-                tableauClasse.Rows.Add();
-               // Console.WriteLine(tableauClasse.Rows.Count);
-                tableauClasse.Rows[tableauClasse.Rows.Count-2].Cells["id"].Value = elt.IdClasse;
-                tableauClasse.Rows[tableauClasse.Rows.Count-2].Cells["designation"].Value = elt.Designation;
-                tableauClasse.Rows[tableauClasse.Rows.Count-2].Cells["description"].Value = elt.Description;
-                tableauClasse.Rows[tableauClasse.Rows.Count-2].Cells["effectif"].Value = 25;
+                classeDataGrid.Rows.Add();
+                classeDataGrid.Rows[classeDataGrid.Rows.Count-1].Cells["id"].Value = elt.IdClasse;
+                classeDataGrid.Rows[classeDataGrid.Rows.Count-1].Cells["designation"].Value = elt.Designation;
+                classeDataGrid.Rows[classeDataGrid.Rows.Count-1].Cells["description"].Value = elt.Description;
+                classeDataGrid.Rows[classeDataGrid.Rows.Count-1].Cells["effectif"].Value = elt.Effectif;
             }
         }
         private void FormClasse_Load(object sender, EventArgs e)
@@ -45,21 +44,34 @@ namespace Nozel.Forms
 
         }
 
-        private void tableauClasse_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+        private void AjoutClasseBtn_Click(object sender, EventArgs e)
+        {  
+            Utils.Utils.Open(new AjoutClasse(), Main.mainPanel);
         }
 
-        private void AjoutClasseBtn_Click(object sender, EventArgs e)
+        private void classeDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //new Main().openForm(new AjoutClasse(),sender);
-            //this.Hide();
-            //AjoutClasse ajoutClasse = new AjoutClasse();
-            
-            ////ajoutClasse.TopLevel = false;
-            ////ajoutClasse.FormBorderStyle = FormBorderStyle.None;
-            /////ajoutClasse.Dock = DockStyle.Fill;
-            //ajoutClasse.Show();
+            if (e.RowIndex >= 0 && e.ColumnIndex == classeDataGrid.Columns["Modifier"].Index)
+            {
+                Utils.Utils.Open(new AjoutClasse((Int32)classeDataGrid[0, e.RowIndex].Value), Main.mainPanel);
+            }
+            else if (e.RowIndex >= 0 && e.ColumnIndex == classeDataGrid.Columns["Supprimer"].Index)
+            {
+                string message = "Voulez-vous supprimer cette classe ?";
+                string title = "Suppression";
+                DialogResult result = MessageBox.Show(message, title, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    Classe classe = new Classe();
+                    classe.IdClasse = (Int32)classeDataGrid[0, e.RowIndex].Value;
+                    cl.DeleteClasse(classe);
+                }
+                LoadData();
+            }
+            else
+            {
+                return;
+            }
         }
     }
 }

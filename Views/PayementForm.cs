@@ -35,6 +35,8 @@ namespace Nozel.Views
 
         private void PayementForm_Load(object sender, EventArgs e)
         {
+            nom.Text = eleve.Nom + " " + eleve.Prenom;
+            classeBox.Text = classe.Designation;
         }
 
         private void payerBtn_Click(object sender, EventArgs e)
@@ -45,7 +47,7 @@ namespace Nozel.Views
                 scolarite = new Scolarite();
                 scolarite.IdEleve = eleve.IdEleve;
                 scolarite.IdClasse = classe.IdClasse;
-                scolarite.Total = 10;
+                scolarite.Total = int.Parse(montant.Text);
                 scCtrl.InsertScolarite(scolarite);
                 tranche.IdScolarite = scCtrl.FindByEleve(eleve.IdEleve).Id;
                 tranche.Montant = int.Parse(montant.Text);
@@ -56,15 +58,20 @@ namespace Nozel.Views
                 tranche.IdScolarite = scolarite.Id;
                 tranche.Montant = int.Parse(montant.Text);
                 trCtrl.InsertTranche(tranche);
+                scCtrl.AddScolarite(scolarite.Id, int.Parse(montant.Text));
             }
-        }
 
-        private void montant_TextChanged(object sender, EventArgs e)
-        {
-        }
+            string message = "payement effectuer avec success";
+            string title = "Success payement";
+            /* DialogResult result = MessageBox.Show(message, title, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+             if (result == DialogResult.Yes)
+             {
+                 Utils.Utils.Open(new HomeForm(), Main.mainPanel);
+             }*/
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
+            MessageBox.Show(message, title);
+           // Utils.Utils.Open(new HomeForm(), Main.mainPanel);
+
         }
     }
 }

@@ -99,7 +99,6 @@
             this.mainPayement_panel.Name = "mainPayement_panel";
             this.mainPayement_panel.Size = new System.Drawing.Size(641, 262);
             this.mainPayement_panel.TabIndex = 4;
-            this.mainPayement_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // annulerBtn
             // 
@@ -133,7 +132,6 @@
             this.montant.Name = "montant";
             this.montant.Size = new System.Drawing.Size(294, 22);
             this.montant.TabIndex = 6;
-            this.montant.TextChanged += new System.EventHandler(this.montant_TextChanged);
             // 
             // classeBox
             // 

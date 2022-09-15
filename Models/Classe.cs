@@ -11,13 +11,15 @@ namespace Nozel.Models
         private int idClasse=0;
         private String designation;
         private String description;
-        private int effectif = 0;
+        private int effectif=0;
+        private double frais;
 
-        public Classe(string designation, string description,int effectif)
+        public Classe(string designation, string description,int effectif,double frais)
         {
             this.Designation = designation;
             this.Description = description;
-            this.Effectif = effectif; 
+            this.Effectif = effectif;
+            this.Frais = frais;
         }
 
         public Classe()
@@ -28,5 +30,6 @@ namespace Nozel.Models
         public int IdClasse { get => idClasse; set => idClasse = value; }
         public string Description { get => description; set => description = value; }
         public int Effectif { get => effectif; set => effectif = value; }
+        public double Frais { get => frais; set => frais = value; }
     }
 }

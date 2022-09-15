@@ -22,9 +22,11 @@ namespace Nozel.Controller
             {
                 con.getConnexion().Open();
                 SQLiteCommand cmd = new SQLiteCommand(con.getConnexion());
-                cmd.CommandText = "INSERT INTO classe (designation,description) VALUES (@designation,@description)";
+                cmd.CommandText = "INSERT INTO classe (designation,description,effectif,frais) VALUES (@designation,@description,@effectif,@frais)";
                 cmd.Parameters.AddWithValue(@"designation", c.Designation);
                 cmd.Parameters.AddWithValue(@"description", c.Description);
+                cmd.Parameters.AddWithValue(@"effectif",0);
+                cmd.Parameters.AddWithValue(@"frais", c.Frais);
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
             } catch (Exception ex)
@@ -47,6 +49,8 @@ namespace Nozel.Controller
                 cl.IdClasse = rd.GetInt32(0);
                 cl.Designation = rd.GetString(1);
                 cl.Description = rd.GetString(2);
+                cl.Effectif = rd.GetInt32(3);
+                cl.Frais = rd.GetDouble(4);
                 classes.Add(cl);
             }
             rd.Close();
@@ -61,10 +65,11 @@ namespace Nozel.Controller
             {
                 con.getConnexion().Open();
                 SQLiteCommand cmd = new SQLiteCommand(con.getConnexion());
-                cmd.CommandText = "UPDATE classe SET designation=@designation,description=@description WHERE idClasse=@id";
+                cmd.CommandText = "UPDATE classe SET designation=@designation,description=@description,frais=@frais WHERE idClasse=@id";
                 cmd.Parameters.AddWithValue(@"id", c.IdClasse);
                 cmd.Parameters.AddWithValue(@"designation", c.Designation);
                 cmd.Parameters.AddWithValue(@"description", c.Description);
+                cmd.Parameters.AddWithValue(@"frais", c.Frais);
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
             }
@@ -89,6 +94,8 @@ namespace Nozel.Controller
                 cl.IdClasse = rd.GetInt32(0);
                 cl.Designation = rd.GetString(1);
                 cl.Description = rd.GetString(2);
+                cl.Effectif = rd.GetInt32(3);
+                cl.Frais = rd.GetDouble(4);
             }
             rd.Close();
             con.getConnexion().Close();
@@ -113,6 +120,8 @@ namespace Nozel.Controller
                 cl.IdClasse = rd.GetInt32(0);
                 cl.Designation = rd.GetString(1);
                 cl.Description = rd.GetString(2);
+                cl.Effectif = rd.GetInt32(3);
+                cl.Frais = rd.GetDouble(4);
             }
             rd.Close();
             con.getConnexion().Close();
@@ -143,7 +152,41 @@ namespace Nozel.Controller
             }
             con.getConnexion().Close();
         }
-
-
+        
+        public void addOneEleve(string des)
+        {
+            Classe cl = new Classe();
+            cl = FindByDesignation(des);
+            cl.Effectif += 1;
+            
+            try
+            {
+                con.getConnexion().Open();
+                SQLiteCommand cmd = new SQLiteCommand(con.getConnexion());
+                cmd.CommandText = "UPDATE classe SET effectif=@effectif WHERE idClasse=@id";
+                cmd.Parameters.AddWithValue(@"id", cl.IdClasse);
+                cmd.Parameters.AddWithValue(@"effectif", cl.Effectif);
+                cmd.ExecuteNonQuery();
+                cmd.Dispose();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            con.getConnexion().Close();
+        }
+        
+        public double GetTotalScolarite(int idC)
+        {
+            double somme = 0;
+            List<Scolarite> scs = new List<Scolarite>();
+            ScolariteController scc = new ScolariteController();
+            scs=scc.FindByClasse(idC);
+            foreach (Scolarite s in scs)
+            {
+                somme += s.Total;
+            }
+            return somme;
+        }
     }
 }

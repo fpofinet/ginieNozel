@@ -18,12 +18,14 @@ namespace Nozel.Controller
 
         public void InsertEleve(Eleve e)
         {
+            string matri = NewMatricule();
             try
             {
                 con.getConnexion().Open();
                 SQLiteCommand cmd = new SQLiteCommand(con.getConnexion());
                 cmd.CommandText = "INSERT INTO eleve (matricule,nom,prenom,dateNaiss,sexe,idClasse) VALUES (@matricule,@nom,@prenom,@dateNaiss,@sexe,@idClasse)";
-                cmd.Parameters.AddWithValue(@"matricule", e.Matricule);
+                Console.WriteLine(matri);
+                cmd.Parameters.AddWithValue(@"matricule", matri);
                 cmd.Parameters.AddWithValue(@"nom",e.Nom);
                 cmd.Parameters.AddWithValue(@"prenom", e.Prenom);
                 cmd.Parameters.AddWithValue(@"dateNaiss", e.DateNaiss);
@@ -45,8 +47,7 @@ namespace Nozel.Controller
             {
                 con.getConnexion().Open();
                 SQLiteCommand cmd = new SQLiteCommand(con.getConnexion());
-                cmd.CommandText = "UPDATE eleve SET matricule=@matricule, nom=@nom, prenom=@prenom, dateNaiss=@dateNaiss, sexe=@sexe, idClasse=@idClasse WHERE idEleve=@id";
-                cmd.Parameters.AddWithValue(@"matricule", e.Matricule);
+                cmd.CommandText = "UPDATE eleve SET nom=@nom, prenom=@prenom, dateNaiss=@dateNaiss, sexe=@sexe, idClasse=@idClasse WHERE idEleve=@id";
                 cmd.Parameters.AddWithValue(@"nom", e.Nom);
                 cmd.Parameters.AddWithValue(@"prenom", e.Prenom);
                 cmd.Parameters.AddWithValue(@"dateNaiss", e.DateNaiss);
@@ -104,7 +105,6 @@ namespace Nozel.Controller
             con.getConnexion().Close();
 
             return eleves;
-            //return null;
         }
 
         public Eleve FindById(int id) 
@@ -138,6 +138,37 @@ namespace Nozel.Controller
             }
         }
 
+        public List<Eleve> FindAllByClasse(string classe)
+        {
+            List<Eleve> eleves = new List<Eleve>();
+            Classe cl = new Classe();
+            ClasseController clc= new ClasseController();
+            cl = clc.FindByDesignation(classe);
+
+            
+            con.getConnexion().Open();
+            String stmt = "SELECT * FROM eleve WHERE idClasse=@id";
+            SQLiteCommand cmder = new SQLiteCommand(stmt, con.getConnexion());
+            cmder.Parameters.AddWithValue(@"id", cl.IdClasse);
+            SQLiteDataReader rd = cmder.ExecuteReader();
+            while (rd.Read())
+            {
+                Eleve el = new Eleve();
+                el.IdEleve = rd.GetInt32(0);
+                el.Matricule = rd.GetString(1);
+                el.Nom = rd.GetString(2);
+                el.Prenom = rd.GetString(3);
+                el.DateNaiss = rd.GetString(4);
+                el.Sexe = rd.GetString(5);
+                el.IdClasse = rd.GetInt32(6);
+                eleves.Add(el);
+            }
+            rd.Close();
+            con.getConnexion().Close();
+
+            return eleves;
+        }
+
         public List<Eleve> Search(string param)
         {
             List<Eleve> eleves = new List<Eleve>();
@@ -145,12 +176,9 @@ namespace Nozel.Controller
             String stmt = "SELECT * FROM eleve WHERE nom LIKE '%"+@param+"%'";
             SQLiteCommand cmder = new SQLiteCommand(con.getConnexion());
             cmder.CommandText = stmt;
-           // cmder.Parameters.AddWithValue("param", param);
             SQLiteDataReader rd = cmder.ExecuteReader();
-            //Console.WriteLine("ct"+param);
             while (rd.Read())
             {
-               // Console.WriteLine("find");
                 Eleve el = new Eleve();
                 el.IdEleve = rd.GetInt32(0);
                 el.Matricule = rd.GetString(1);
@@ -165,5 +193,51 @@ namespace Nozel.Controller
             con.getConnexion().Close();
             return eleves;
         }
+
+        public double GetSolde(int idE)
+        {
+            Eleve eleve = new Eleve();
+            eleve=FindById(idE);
+            if (eleve != null)
+            {
+                Scolarite sc = new Scolarite();
+                ScolariteController scc = new ScolariteController();
+                sc = scc.FindByEleve(eleve.IdEleve);
+                return sc.Total;
+            } else
+            {
+                return 0;
+            } 
+        }
+
+        private string NewMatricule()
+        {
+            //SELECT * FROM Table ORDER BY ID DESC LIMIT 1
+            Eleve el = new Eleve();
+            string mat;
+            con.getConnexion().Open();
+            String stmt = "SELECT * FROM eleve ORDER BY idEleve DESC LIMIT 1";
+            SQLiteCommand cmder = new SQLiteCommand(stmt, con.getConnexion());
+            SQLiteDataReader rd = cmder.ExecuteReader();
+            while (rd.Read())
+            {
+                el.IdEleve = rd.GetInt32(0);
+                Console.WriteLine(el.IdEleve);
+            }
+            rd.Close();
+            con.getConnexion().Close();
+            if(el.IdEleve != 0)
+            {
+                mat = "mat0" + (el.IdEleve+1);
+            }
+            else
+            {
+                mat = "mat01";
+            }
+            Console.WriteLine(mat);
+            return mat;
+        }
+
+
     }
 }

@@ -47,7 +47,7 @@ namespace Nozel.Controller
                 try 
                 {
                     connexion.Open();
-                    string sql0 = "CREATE TABLE classe (idClasse INTEGER,designation text,description text,effectif INTEGER,PRIMARY KEY('idClasse' AUTOINCREMENT))";
+                    string sql0 = "CREATE TABLE classe (idClasse INTEGER,designation text,description text,effectif INTEGER,frais REAL,PRIMARY KEY('idClasse' AUTOINCREMENT))";
                     string sql1 = "CREATE TABLE eleve (idEleve INTEGER,matricule text,nom text,prenom text,dateNaiss text,sexe text,idClasse INTEGER,PRIMARY KEY('idEleve' AUTOINCREMENT),FOREIGN KEY (idClasse) REFERENCES classe (idClasse))";
                     string sql2 = "CREATE TABLE matiere(idMatiere INTEGER,designation text,description text,PRIMARY KEY('idMatiere' AUTOINCREMENT))";
                     string sql3 = "CREATE TABLE note(idNote INTEGER,idMatiere INTEGER,idEleve INTEGER,note REAL,PRIMARY KEY('idNote' AUTOINCREMENT),FOREIGN KEY (idMatiere) REFERENCES matiere (idMatiere),FOREIGN KEY (idEleve) REFERENCES eleve (idEleve))";

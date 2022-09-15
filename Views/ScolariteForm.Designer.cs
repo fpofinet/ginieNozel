@@ -53,7 +53,7 @@
             this.rechercher_panel.Controls.Add(this.nom_label);
             this.rechercher_panel.Location = new System.Drawing.Point(260, 83);
             this.rechercher_panel.Name = "rechercher_panel";
-            this.rechercher_panel.Size = new System.Drawing.Size(1004, 384);
+            this.rechercher_panel.Size = new System.Drawing.Size(1004, 670);
             this.rechercher_panel.TabIndex = 0;
             this.rechercher_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -62,6 +62,7 @@
             this.rechercherData.AllowUserToAddRows = false;
             this.rechercherData.AllowUserToDeleteRows = false;
             this.rechercherData.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(195)))), ((int)(((byte)(206)))));
+            this.rechercherData.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rechercherData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.rechercherData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -74,7 +75,7 @@
             this.rechercherData.Name = "rechercherData";
             this.rechercherData.RowHeadersWidth = 51;
             this.rechercherData.RowTemplate.Height = 24;
-            this.rechercherData.Size = new System.Drawing.Size(976, 150);
+            this.rechercherData.Size = new System.Drawing.Size(976, 231);
             this.rechercherData.TabIndex = 3;
             this.rechercherData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.rechercherData_CellContentClick);
             // 
@@ -173,7 +174,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(195)))), ((int)(((byte)(206)))));
-            this.ClientSize = new System.Drawing.Size(1780, 557);
+            this.ClientSize = new System.Drawing.Size(1780, 765);
             this.Controls.Add(this.head_panel);
             this.Controls.Add(this.rechercher_panel);
             this.Name = "ScolariteForm";

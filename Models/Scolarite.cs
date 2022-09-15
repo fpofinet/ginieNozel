@@ -11,7 +11,7 @@ namespace Nozel.Models
         private int id;
         private int idEleve;
         private int idClasse;
-        private double total;
+        private double total=0.0;
 
         public Scolarite(int id, int idEleve, double total,int idClasse)
         {

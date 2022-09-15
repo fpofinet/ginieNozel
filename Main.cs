@@ -20,22 +20,12 @@ namespace Nozel
         public Main()
         {
             InitializeComponent();
-            //Connexion cx = new Connexion();
-           // EleveController ec = new EleveController();
-            //Eleve e = new Eleve(1, "001", "sophiebb", "altamira", "12/10/2003", 1,2) ;
-            //var data =ec.FindById(1);
-            //ClasseController cs = new ClasseController();
-            //Classe c = new Classe("cp2","classe de cp2");
-            //c.IdClasse = 2;
-            //Classe c2 = new Classe("cp1", "classe de cp1");
-            //c.IdClasse = 1;
-            //cs.InsertClasse(c);
-            //cs.InsertClasse(c2);
-            //Console.WriteLine(data.Nom);
-        }
-        public Main(int a)
-        {
+            Utils.Utils.Open(new HomeForm(), mainPanel);
+            Eleve el = new Eleve();
+            EleveController c = new EleveController();
 
+           // Console.WriteLine(c.GetSolde(2));
+           
         }
         public void openForm(Form active)
         {
@@ -57,36 +47,23 @@ namespace Nozel
         }
         private void eleveBtn_Click(object sender, EventArgs e)
         {
-            Utils.Utils.Open(new Views.FormEleve(), mainPanel);
-            //openForm(new Views.FormEleve());
+            // Utils.Utils.Open(new FormEleve(), mainPanel);
+            Utils.Utils.Open(new ListeEleve(), mainPanel);
         }
 
         private void classeBtn_Click(object sender, EventArgs e)
         {
-            //openForm(new Views.AjoutClasse());
-            Utils.Utils.Open(new Views.AjoutClasse(), mainPanel);
+            Utils.Utils.Open(new FormClasse(), mainPanel);
         }
 
         private void BulletinBtn_Click(object sender, EventArgs e)
         {
-
-            Utils.Utils.Open(new Views.ScolariteForm(), mainPanel);
-           // openForm(new Views.ScolariteForm());
+            Utils.Utils.Open(new ScolariteForm(), mainPanel);
         }
 
-        private void Main_Load(object sender, EventArgs e)
+        private void homeBtn_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void mainPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void noteBtn_Click(object sender, EventArgs e)
-        {
-            Console.WriteLine("pupo");
+            Utils.Utils.Open(new HomeForm(), mainPanel);
         }
     }
 }
