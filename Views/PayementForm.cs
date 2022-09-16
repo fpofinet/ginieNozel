@@ -63,14 +63,9 @@ namespace Nozel.Views
 
             string message = "payement effectuer avec success";
             string title = "Success payement";
-            /* DialogResult result = MessageBox.Show(message, title, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-             if (result == DialogResult.Yes)
-             {
-                 Utils.Utils.Open(new HomeForm(), Main.mainPanel);
-             }*/
-
+            
             MessageBox.Show(message, title);
-           // Utils.Utils.Open(new HomeForm(), Main.mainPanel);
+            Utils.Utils.Open(new FicheEleve(eleve.IdEleve), Main.mainPanel);
 
         }
     }

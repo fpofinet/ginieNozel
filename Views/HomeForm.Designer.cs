@@ -28,44 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeForm));
             this.head_panel = new System.Windows.Forms.Panel();
             this.title_label = new System.Windows.Forms.Label();
-            this.dataStudentPanel = new System.Windows.Forms.Panel();
-            this.filtresPanel = new System.Windows.Forms.Panel();
-            this.classeFiltreBox = new System.Windows.Forms.ComboBox();
-            this.searchLabel = new System.Windows.Forms.Label();
-            this.search = new System.Windows.Forms.TextBox();
-            this.filtreLabel = new System.Windows.Forms.Label();
-            this.homeDataGrid = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sexe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.classe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statut = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataPANEL = new System.Windows.Forms.Panel();
-            this.statDataGrid = new System.Windows.Forms.DataGridView();
-            this.salle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.effectif = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.efajour = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.efrestant = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rec = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statPanel = new System.Windows.Forms.Panel();
-            this.statLabel = new System.Windows.Forms.Label();
-            this.soldeData = new System.Windows.Forms.Label();
-            this.soldeLabel = new System.Windows.Forms.Label();
-            this.eleveStatutData = new System.Windows.Forms.Label();
-            this.eleveStatutLabel = new System.Windows.Forms.Label();
-            this.nRecData = new System.Windows.Forms.Label();
-            this.nRecLabel = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.eleveLabel = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.recouvLabel = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.ClasseLabel = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.head_panel.SuspendLayout();
-            this.dataStudentPanel.SuspendLayout();
-            this.filtresPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.homeDataGrid)).BeginInit();
-            this.dataPANEL.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.statDataGrid)).BeginInit();
-            this.statPanel.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // head_panel
@@ -90,296 +88,221 @@
             this.title_label.TabIndex = 0;
             this.title_label.Text = "TABLEAU DE BOARD";
             // 
-            // dataStudentPanel
+            // panel1
             // 
-            this.dataStudentPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataStudentPanel.Controls.Add(this.filtresPanel);
-            this.dataStudentPanel.Controls.Add(this.homeDataGrid);
-            this.dataStudentPanel.Location = new System.Drawing.Point(814, 87);
-            this.dataStudentPanel.Name = "dataStudentPanel";
-            this.dataStudentPanel.Size = new System.Drawing.Size(1020, 673);
-            this.dataStudentPanel.TabIndex = 1;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(154)))), ((int)(((byte)(163)))));
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.eleveLabel);
+            this.panel1.Location = new System.Drawing.Point(106, 381);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(454, 160);
+            this.panel1.TabIndex = 1;
+            this.panel1.Click += new System.EventHandler(this.eleveLabel_Click);
             // 
-            // filtresPanel
+            // pictureBox2
             // 
-            this.filtresPanel.Controls.Add(this.classeFiltreBox);
-            this.filtresPanel.Controls.Add(this.searchLabel);
-            this.filtresPanel.Controls.Add(this.search);
-            this.filtresPanel.Controls.Add(this.filtreLabel);
-            this.filtresPanel.Location = new System.Drawing.Point(3, 3);
-            this.filtresPanel.Name = "filtresPanel";
-            this.filtresPanel.Size = new System.Drawing.Size(1055, 164);
-            this.filtresPanel.TabIndex = 1;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(264, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(190, 157);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.eleveLabel_Click);
             // 
-            // classeFiltreBox
+            // label4
             // 
-            this.classeFiltreBox.FormattingEnabled = true;
-            this.classeFiltreBox.Location = new System.Drawing.Point(264, 99);
-            this.classeFiltreBox.Name = "classeFiltreBox";
-            this.classeFiltreBox.Size = new System.Drawing.Size(121, 24);
-            this.classeFiltreBox.TabIndex = 3;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(7, 8);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(89, 68);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "89";
+            this.label4.Click += new System.EventHandler(this.eleveLabel_Click);
             // 
-            // searchLabel
+            // eleveLabel
             // 
-            this.searchLabel.AutoSize = true;
-            this.searchLabel.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchLabel.Location = new System.Drawing.Point(15, 39);
-            this.searchLabel.Name = "searchLabel";
-            this.searchLabel.Size = new System.Drawing.Size(215, 32);
-            this.searchLabel.TabIndex = 2;
-            this.searchLabel.Text = "RECHERCHER";
+            this.eleveLabel.AutoSize = true;
+            this.eleveLabel.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eleveLabel.Location = new System.Drawing.Point(13, 101);
+            this.eleveLabel.Name = "eleveLabel";
+            this.eleveLabel.Size = new System.Drawing.Size(118, 33);
+            this.eleveLabel.TabIndex = 0;
+            this.eleveLabel.Text = "ELEVES";
+            this.eleveLabel.Click += new System.EventHandler(this.eleveLabel_Click);
             // 
-            // search
+            // panel2
             // 
-            this.search.Location = new System.Drawing.Point(264, 36);
-            this.search.Multiline = true;
-            this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(428, 35);
-            this.search.TabIndex = 1;
-            this.search.TextChanged += new System.EventHandler(this.search_TextChanged);
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(154)))), ((int)(((byte)(163)))));
+            this.panel2.Controls.Add(this.pictureBox4);
+            this.panel2.Controls.Add(this.recouvLabel);
+            this.panel2.Location = new System.Drawing.Point(1142, 144);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(454, 160);
+            this.panel2.TabIndex = 2;
             // 
-            // filtreLabel
+            // pictureBox4
             // 
-            this.filtreLabel.AutoSize = true;
-            this.filtreLabel.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.filtreLabel.Location = new System.Drawing.Point(88, 89);
-            this.filtreLabel.Name = "filtreLabel";
-            this.filtreLabel.Size = new System.Drawing.Size(142, 35);
-            this.filtreLabel.TabIndex = 0;
-            this.filtreLabel.Text = "FILTRES";
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(264, 3);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(187, 154);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 2;
+            this.pictureBox4.TabStop = false;
             // 
-            // homeDataGrid
+            // recouvLabel
             // 
-            this.homeDataGrid.AllowUserToAddRows = false;
-            this.homeDataGrid.AllowUserToDeleteRows = false;
-            this.homeDataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(195)))), ((int)(((byte)(206)))));
-            this.homeDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.homeDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.homeDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.mat,
-            this.nom,
-            this.prenom,
-            this.sexe,
-            this.classe,
-            this.statut});
-            this.homeDataGrid.Location = new System.Drawing.Point(3, 186);
-            this.homeDataGrid.Name = "homeDataGrid";
-            this.homeDataGrid.RowHeadersWidth = 51;
-            this.homeDataGrid.RowTemplate.Height = 24;
-            this.homeDataGrid.Size = new System.Drawing.Size(1055, 486);
-            this.homeDataGrid.TabIndex = 0;
+            this.recouvLabel.AutoSize = true;
+            this.recouvLabel.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.recouvLabel.Location = new System.Drawing.Point(3, 37);
+            this.recouvLabel.Name = "recouvLabel";
+            this.recouvLabel.Size = new System.Drawing.Size(223, 37);
+            this.recouvLabel.TabIndex = 1;
+            this.recouvLabel.Text = "Recouvrement";
             // 
-            // id
+            // panel3
             // 
-            this.id.HeaderText = "ID";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            this.id.Width = 50;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(154)))), ((int)(((byte)(163)))));
+            this.panel3.Controls.Add(this.pictureBox3);
+            this.panel3.Controls.Add(this.ClasseLabel);
+            this.panel3.Location = new System.Drawing.Point(626, 141);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(454, 160);
+            this.panel3.TabIndex = 3;
+            this.panel3.Click += new System.EventHandler(this.ClasseLabel_Click);
             // 
-            // mat
+            // pictureBox3
             // 
-            this.mat.HeaderText = "MATRICULE";
-            this.mat.MinimumWidth = 6;
-            this.mat.Name = "mat";
-            this.mat.ReadOnly = true;
-            this.mat.Width = 90;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(264, 3);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(187, 154);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.ClasseLabel_Click);
             // 
-            // nom
+            // ClasseLabel
             // 
-            this.nom.HeaderText = "NOM";
-            this.nom.MinimumWidth = 6;
-            this.nom.Name = "nom";
-            this.nom.ReadOnly = true;
-            this.nom.Width = 160;
+            this.ClasseLabel.AutoSize = true;
+            this.ClasseLabel.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClasseLabel.Location = new System.Drawing.Point(3, 40);
+            this.ClasseLabel.Name = "ClasseLabel";
+            this.ClasseLabel.Size = new System.Drawing.Size(209, 37);
+            this.ClasseLabel.TabIndex = 1;
+            this.ClasseLabel.Text = "Encaissement";
+            this.ClasseLabel.Click += new System.EventHandler(this.ClasseLabel_Click);
             // 
-            // prenom
+            // panel4
             // 
-            this.prenom.HeaderText = "PRENOM";
-            this.prenom.MinimumWidth = 6;
-            this.prenom.Name = "prenom";
-            this.prenom.ReadOnly = true;
-            this.prenom.Width = 160;
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(154)))), ((int)(((byte)(163)))));
+            this.panel4.Controls.Add(this.pictureBox1);
+            this.panel4.Controls.Add(this.label1);
+            this.panel4.Location = new System.Drawing.Point(106, 141);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(454, 160);
+            this.panel4.TabIndex = 4;
+            this.panel4.Click += new System.EventHandler(this.label1_Click);
             // 
-            // sexe
+            // pictureBox1
             // 
-            this.sexe.HeaderText = "SEXE";
-            this.sexe.MinimumWidth = 6;
-            this.sexe.Name = "sexe";
-            this.sexe.ReadOnly = true;
-            this.sexe.Width = 70;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(264, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(190, 157);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // classe
+            // label1
             // 
-            this.classe.HeaderText = "CLASSE";
-            this.classe.MinimumWidth = 6;
-            this.classe.Name = "classe";
-            this.classe.ReadOnly = true;
-            this.classe.Width = 70;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(173, 37);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Inscription";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // statut
+            // panel5
             // 
-            this.statut.HeaderText = "STATUT";
-            this.statut.MinimumWidth = 6;
-            this.statut.Name = "statut";
-            this.statut.ReadOnly = true;
-            this.statut.Width = 125;
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(154)))), ((int)(((byte)(163)))));
+            this.panel5.Controls.Add(this.label5);
+            this.panel5.Controls.Add(this.pictureBox5);
+            this.panel5.Controls.Add(this.label2);
+            this.panel5.Location = new System.Drawing.Point(626, 381);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(454, 160);
+            this.panel5.TabIndex = 5;
+            this.panel5.Click += new System.EventHandler(this.label2_Click);
             // 
-            // dataPANEL
+            // label5
             // 
-            this.dataPANEL.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataPANEL.Controls.Add(this.statDataGrid);
-            this.dataPANEL.Location = new System.Drawing.Point(5, 362);
-            this.dataPANEL.Name = "dataPANEL";
-            this.dataPANEL.Size = new System.Drawing.Size(768, 398);
-            this.dataPANEL.TabIndex = 2;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(22, 8);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(59, 68);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "9";
+            this.label5.Click += new System.EventHandler(this.label2_Click);
             // 
-            // statDataGrid
+            // pictureBox5
             // 
-            this.statDataGrid.AllowUserToAddRows = false;
-            this.statDataGrid.AllowUserToDeleteRows = false;
-            this.statDataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(195)))), ((int)(((byte)(206)))));
-            this.statDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.statDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.statDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.salle,
-            this.effectif,
-            this.efajour,
-            this.efrestant,
-            this.rec});
-            this.statDataGrid.Location = new System.Drawing.Point(8, 14);
-            this.statDataGrid.Name = "statDataGrid";
-            this.statDataGrid.RowHeadersWidth = 51;
-            this.statDataGrid.RowTemplate.Height = 24;
-            this.statDataGrid.Size = new System.Drawing.Size(753, 377);
-            this.statDataGrid.TabIndex = 0;
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(264, 3);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(190, 154);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 1;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.label2_Click);
             // 
-            // salle
+            // label2
             // 
-            this.salle.HeaderText = "CLASSE";
-            this.salle.MinimumWidth = 6;
-            this.salle.Name = "salle";
-            this.salle.ReadOnly = true;
-            this.salle.Width = 75;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(28, 101);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(115, 33);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "SALLES";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // effectif
+            // panel6
             // 
-            this.effectif.HeaderText = "EFFECTIF";
-            this.effectif.MinimumWidth = 6;
-            this.effectif.Name = "effectif";
-            this.effectif.ReadOnly = true;
-            this.effectif.Width = 75;
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(154)))), ((int)(((byte)(163)))));
+            this.panel6.Controls.Add(this.pictureBox6);
+            this.panel6.Controls.Add(this.label3);
+            this.panel6.Location = new System.Drawing.Point(1142, 381);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(454, 160);
+            this.panel6.TabIndex = 6;
             // 
-            // efajour
+            // pictureBox6
             // 
-            this.efajour.HeaderText = "EFF. A JOUR";
-            this.efajour.MinimumWidth = 6;
-            this.efajour.Name = "efajour";
-            this.efajour.ReadOnly = true;
-            this.efajour.Width = 110;
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(264, 0);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(190, 157);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 2;
+            this.pictureBox6.TabStop = false;
             // 
-            // efrestant
+            // label3
             // 
-            this.efrestant.HeaderText = "EFF. RESTANT";
-            this.efrestant.MinimumWidth = 6;
-            this.efrestant.Name = "efrestant";
-            this.efrestant.ReadOnly = true;
-            this.efrestant.Width = 110;
-            // 
-            // rec
-            // 
-            this.rec.HeaderText = "TOTAL COLLECTE";
-            this.rec.MinimumWidth = 6;
-            this.rec.Name = "rec";
-            this.rec.ReadOnly = true;
-            this.rec.Width = 125;
-            // 
-            // statPanel
-            // 
-            this.statPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.statPanel.Controls.Add(this.statLabel);
-            this.statPanel.Controls.Add(this.soldeData);
-            this.statPanel.Controls.Add(this.soldeLabel);
-            this.statPanel.Controls.Add(this.eleveStatutData);
-            this.statPanel.Controls.Add(this.eleveStatutLabel);
-            this.statPanel.Controls.Add(this.nRecData);
-            this.statPanel.Controls.Add(this.nRecLabel);
-            this.statPanel.Location = new System.Drawing.Point(5, 87);
-            this.statPanel.Name = "statPanel";
-            this.statPanel.Size = new System.Drawing.Size(768, 269);
-            this.statPanel.TabIndex = 3;
-            // 
-            // statLabel
-            // 
-            this.statLabel.AutoSize = true;
-            this.statLabel.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statLabel.Location = new System.Drawing.Point(193, 0);
-            this.statLabel.Name = "statLabel";
-            this.statLabel.Size = new System.Drawing.Size(253, 37);
-            this.statLabel.TabIndex = 6;
-            this.statLabel.Text = "STATISTIQUES";
-            // 
-            // soldeData
-            // 
-            this.soldeData.AutoSize = true;
-            this.soldeData.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.soldeData.Location = new System.Drawing.Point(111, 180);
-            this.soldeData.Name = "soldeData";
-            this.soldeData.Size = new System.Drawing.Size(116, 25);
-            this.soldeData.TabIndex = 5;
-            this.soldeData.Text = "25 sur 100";
-            // 
-            // soldeLabel
-            // 
-            this.soldeLabel.AutoSize = true;
-            this.soldeLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.soldeLabel.Location = new System.Drawing.Point(3, 180);
-            this.soldeLabel.Name = "soldeLabel";
-            this.soldeLabel.Size = new System.Drawing.Size(102, 26);
-            this.soldeLabel.TabIndex = 4;
-            this.soldeLabel.Text = "SOLDE : ";
-            // 
-            // eleveStatutData
-            // 
-            this.eleveStatutData.AutoSize = true;
-            this.eleveStatutData.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eleveStatutData.Location = new System.Drawing.Point(271, 126);
-            this.eleveStatutData.Name = "eleveStatutData";
-            this.eleveStatutData.Size = new System.Drawing.Size(122, 25);
-            this.eleveStatutData.TabIndex = 3;
-            this.eleveStatutData.Text = "50  sur 100";
-            // 
-            // eleveStatutLabel
-            // 
-            this.eleveStatutLabel.AutoSize = true;
-            this.eleveStatutLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eleveStatutLabel.Location = new System.Drawing.Point(3, 125);
-            this.eleveStatutLabel.Name = "eleveStatutLabel";
-            this.eleveStatutLabel.Size = new System.Drawing.Size(242, 26);
-            this.eleveStatutLabel.TabIndex = 2;
-            this.eleveStatutLabel.Text = "TOTAL DES ELEVES  : ";
-            // 
-            // nRecData
-            // 
-            this.nRecData.AutoSize = true;
-            this.nRecData.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nRecData.Location = new System.Drawing.Point(365, 67);
-            this.nRecData.Name = "nRecData";
-            this.nRecData.Size = new System.Drawing.Size(206, 25);
-            this.nRecData.TabIndex = 1;
-            this.nRecData.Text = "50.000 sur 100.000 ";
-            // 
-            // nRecLabel
-            // 
-            this.nRecLabel.AutoSize = true;
-            this.nRecLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nRecLabel.Location = new System.Drawing.Point(3, 67);
-            this.nRecLabel.Name = "nRecLabel";
-            this.nRecLabel.Size = new System.Drawing.Size(336, 26);
-            this.nRecLabel.TabIndex = 0;
-            this.nRecLabel.Text = "NIVEAU DE RECOUVREMENT : ";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(13, 33);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(150, 37);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "AUTRES";
             // 
             // HomeForm
             // 
@@ -387,22 +310,35 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(195)))), ((int)(((byte)(206)))));
             this.ClientSize = new System.Drawing.Size(1875, 772);
-            this.Controls.Add(this.statPanel);
-            this.Controls.Add(this.dataPANEL);
-            this.Controls.Add(this.dataStudentPanel);
+            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.head_panel);
             this.Name = "HomeForm";
             this.Text = "HomeForm";
             this.head_panel.ResumeLayout(false);
             this.head_panel.PerformLayout();
-            this.dataStudentPanel.ResumeLayout(false);
-            this.filtresPanel.ResumeLayout(false);
-            this.filtresPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.homeDataGrid)).EndInit();
-            this.dataPANEL.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.statDataGrid)).EndInit();
-            this.statPanel.ResumeLayout(false);
-            this.statPanel.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -411,34 +347,25 @@
 
         private System.Windows.Forms.Panel head_panel;
         private System.Windows.Forms.Label title_label;
-        private System.Windows.Forms.Panel dataStudentPanel;
-        private System.Windows.Forms.Panel statPanel;
-        private System.Windows.Forms.Panel dataPANEL;
-        private System.Windows.Forms.Panel filtresPanel;
-        private System.Windows.Forms.ComboBox classeFiltreBox;
-        private System.Windows.Forms.Label searchLabel;
-        private System.Windows.Forms.TextBox search;
-        private System.Windows.Forms.Label filtreLabel;
-        private System.Windows.Forms.DataGridView homeDataGrid;
-        private System.Windows.Forms.Label statLabel;
-        private System.Windows.Forms.Label soldeData;
-        private System.Windows.Forms.Label soldeLabel;
-        private System.Windows.Forms.Label eleveStatutData;
-        private System.Windows.Forms.Label eleveStatutLabel;
-        private System.Windows.Forms.Label nRecData;
-        private System.Windows.Forms.Label nRecLabel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prenom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sexe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn classe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn statut;
-        private System.Windows.Forms.DataGridView statDataGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn salle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn effectif;
-        private System.Windows.Forms.DataGridViewTextBoxColumn efajour;
-        private System.Windows.Forms.DataGridViewTextBoxColumn efrestant;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rec;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label eleveLabel;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label recouvLabel;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label ClasseLabel;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pictureBox6;
     }
 }

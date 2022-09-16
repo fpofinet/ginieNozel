@@ -62,7 +62,7 @@ namespace Nozel.Views
         {
             if (e.RowIndex >= 0 && e.ColumnIndex == rechercherData.Columns["payer"].Index)
             {
-                //Utils.Utils.Open(new PayementForm((Int32)rechercherData[0, e.RowIndex].Value, clCtrl.FindByDesignation((string)rechercherData[4, e.RowIndex].Value).IdClasse ), Main.mainPanel); 
+                Utils.Utils.Open(new PayementForm((Int32)rechercherData[0, e.RowIndex].Value, clCtrl.FindByDesignation((string)rechercherData[4, e.RowIndex].Value).IdClasse ), Main.mainPanel); 
             }
         }
 
