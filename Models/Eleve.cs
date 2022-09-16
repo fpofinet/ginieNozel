@@ -15,6 +15,9 @@ namespace Nozel.Models
         private string dateNaiss;
         private string sexe;
         private int idClasse;
+        private string nomTuteur;
+        private string contactTuteur;
+        private string adresse;
 
         public Eleve(int idEleve, string matricule, string nom, string prenom, string dateNaiss, string sexe, int idClasse)
         {
@@ -38,5 +41,9 @@ namespace Nozel.Models
         public string DateNaiss { get => dateNaiss; set => dateNaiss = value; }
         public string Sexe { get => sexe; set => sexe = value; }
         public int IdClasse { get => idClasse; set => idClasse = value; }
+
+        public string ContactTuteur { get => contactTuteur; set => contactTuteur = value; }
+        public string NomTuteur { get => nomTuteur; set => nomTuteur = value; }
+        public string Adresse { get => adresse; set => adresse = value; }
     }
 }

@@ -62,5 +62,10 @@ namespace Nozel.Views
         {
             Utils.Utils.Open(new FormClasse(), Main.mainPanel);
         }
+
+        private void recouvLabel_Click(object sender, EventArgs e)
+        {
+            Utils.Utils.Open(new Recouvrement(), Main.mainPanel);
+        }
     }
 }

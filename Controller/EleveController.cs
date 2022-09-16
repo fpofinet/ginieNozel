@@ -23,7 +23,8 @@ namespace Nozel.Controller
             {
                 con.getConnexion().Open();
                 SQLiteCommand cmd = new SQLiteCommand(con.getConnexion());
-                cmd.CommandText = "INSERT INTO eleve (matricule,nom,prenom,dateNaiss,sexe,idClasse) VALUES (@matricule,@nom,@prenom,@dateNaiss,@sexe,@idClasse)";
+                cmd.CommandText = "INSERT INTO eleve (matricule,nom,prenom,dateNaiss,sexe,idClasse,nomTuteur,contactTuteur,adresse) " +
+                                  "VALUES (@matricule,@nom,@prenom,@dateNaiss,@sexe,@idClasse,@nomTuteur,@contactTuteur,@adresse)";
                 Console.WriteLine(matri);
                 cmd.Parameters.AddWithValue(@"matricule", matri);
                 cmd.Parameters.AddWithValue(@"nom",e.Nom);
@@ -31,6 +32,9 @@ namespace Nozel.Controller
                 cmd.Parameters.AddWithValue(@"dateNaiss", e.DateNaiss);
                 cmd.Parameters.AddWithValue(@"sexe", e.Sexe);
                 cmd.Parameters.AddWithValue(@"idClasse", e.IdClasse);
+                cmd.Parameters.AddWithValue(@"nomTuteur", e.NomTuteur);
+                cmd.Parameters.AddWithValue(@"contactTuteur", e.ContactTuteur);
+                cmd.Parameters.AddWithValue(@"adresse", e.Adresse);
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
             }
@@ -47,12 +51,15 @@ namespace Nozel.Controller
             {
                 con.getConnexion().Open();
                 SQLiteCommand cmd = new SQLiteCommand(con.getConnexion());
-                cmd.CommandText = "UPDATE eleve SET nom=@nom, prenom=@prenom, dateNaiss=@dateNaiss, sexe=@sexe, idClasse=@idClasse WHERE idEleve=@id";
+                cmd.CommandText = "UPDATE eleve SET nom=@nom, prenom=@prenom, dateNaiss=@dateNaiss, sexe=@sexe, idClasse=@idClasse,nomTuteur=@nomTuteur,contactTuteur=@contactTuteur,adresse=@adresse WHERE idEleve=@id";
                 cmd.Parameters.AddWithValue(@"nom", e.Nom);
                 cmd.Parameters.AddWithValue(@"prenom", e.Prenom);
                 cmd.Parameters.AddWithValue(@"dateNaiss", e.DateNaiss);
                 cmd.Parameters.AddWithValue(@"sexe", e.Sexe);
                 cmd.Parameters.AddWithValue(@"idClasse", e.IdClasse);
+                cmd.Parameters.AddWithValue(@"nomTuteur", e.NomTuteur);
+                cmd.Parameters.AddWithValue(@"contactTuteur", e.ContactTuteur);
+                cmd.Parameters.AddWithValue(@"adresse", e.Adresse);
                 cmd.Parameters.AddWithValue(@"id", e.IdEleve);
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
@@ -99,6 +106,9 @@ namespace Nozel.Controller
                 el.DateNaiss = rd.GetString(4);
                 el.Sexe = rd.GetString(5);
                 el.IdClasse = rd.GetInt32(6);
+                el.NomTuteur = rd.GetString(7);
+                el.ContactTuteur = rd.GetString(8);
+                el.Adresse = rd.GetString(9);
                 eleves.Add(el);
             }
             rd.Close();
@@ -125,6 +135,9 @@ namespace Nozel.Controller
                 el.DateNaiss = rd.GetString(4);
                 el.Sexe = rd.GetString(5);
                 el.IdClasse = rd.GetInt32(6);
+                el.NomTuteur = rd.GetString(7);
+                el.ContactTuteur = rd.GetString(8);
+                el.Adresse = rd.GetString(9);
             }
             rd.Close();
             con.getConnexion().Close();
@@ -187,6 +200,9 @@ namespace Nozel.Controller
                 el.DateNaiss = rd.GetString(4);
                 el.Sexe = rd.GetString(5);
                 el.IdClasse = rd.GetInt32(6);
+                el.NomTuteur = rd.GetString(7);
+                el.ContactTuteur = rd.GetString(8);
+                el.Adresse = rd.GetString(9);
                 eleves.Add(el);
             }
             rd.Close();

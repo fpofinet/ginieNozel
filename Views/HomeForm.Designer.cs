@@ -142,6 +142,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(454, 160);
             this.panel2.TabIndex = 2;
+            this.panel2.Click += new System.EventHandler(this.recouvLabel_Click);
             // 
             // pictureBox4
             // 
@@ -152,6 +153,7 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 2;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.recouvLabel_Click);
             // 
             // recouvLabel
             // 
@@ -162,6 +164,7 @@
             this.recouvLabel.Size = new System.Drawing.Size(223, 37);
             this.recouvLabel.TabIndex = 1;
             this.recouvLabel.Text = "Recouvrement";
+            this.recouvLabel.Click += new System.EventHandler(this.recouvLabel_Click);
             // 
             // panel3
             // 

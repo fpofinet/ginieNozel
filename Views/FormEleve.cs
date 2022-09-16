@@ -35,6 +35,9 @@ namespace Nozel.Views
             dateNaiss.Text = eleve.DateNaiss;
             sexe.Text = eleve.Sexe;
             classe.SelectedItem = clCtrl.FindById(eleve.IdClasse).Designation;
+            nomTuteur.Text=eleve.NomTuteur;
+            contactTuteur.Text = eleve.ContactTuteur;
+            adresse.Text = eleve.Adresse;
         }
 
         private void LoadData()
@@ -56,6 +59,9 @@ namespace Nozel.Views
             eleve.DateNaiss = dateNaiss.Value.ToString().Substring(0,dateNaiss.Value.ToString().IndexOf(" "));
             eleve.Sexe = sexe.Text;
             eleve.IdClasse = clCtrl.FindByDesignation(classe.Text).IdClasse;
+            eleve.NomTuteur = nomTuteur.Text;
+            eleve.ContactTuteur= contactTuteur.Text;
+            eleve.Adresse= adresse.Text;
             if (eleve.IdEleve == 0)
             {
                 eleveControl.InsertEleve(eleve);
@@ -69,6 +75,9 @@ namespace Nozel.Views
             prenom.Clear();
             sexe.ClearSelected();
             classe.SelectedIndex = 0;
+            contactTuteur.Clear();
+            nomTuteur.Clear();
+            adresse.Clear();
             eleve = new Eleve();
             Utils.Utils.Open(new ListeEleve(), Main.mainPanel);
         }
@@ -78,6 +87,9 @@ namespace Nozel.Views
             nom.Clear();
             prenom.Clear();
             sexe.ClearSelected();
+            contactTuteur.Clear();
+            nomTuteur.Clear();
+            adresse.Clear();
             enregistrerBtn.Font =new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             enregistrerBtn.Text = "ENREGISTRER";
         }

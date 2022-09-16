@@ -21,3 +21,4 @@ C:\Users\pc\Projects\Nozel\obj\Debug\Nozel.Views.HomeForm.resources
 C:\Users\pc\Projects\Nozel\obj\Debug\Nozel.Views.FormClasse.resources
 C:\Users\pc\Projects\Nozel\obj\Debug\Nozel.Views.ListeEleve.resources
 C:\Users\pc\Projects\Nozel\obj\Debug\Nozel.Views.FicheEleve.resources
+C:\Users\pc\Projects\Nozel\obj\Debug\Nozel.Views.Recouvrement.resources

@@ -22,9 +22,10 @@ namespace Nozel.Controller
             {
                 con.getConnexion().Open();
                 SQLiteCommand cmd = new SQLiteCommand(con.getConnexion());
-                cmd.CommandText = "INSERT INTO tranche (idScolarite,montant) VALUES (@idScolarite,@montant)";
+                cmd.CommandText = "INSERT INTO tranche (idScolarite,montant,createdAt) VALUES (@idScolarite,@montant,@date)";
                 cmd.Parameters.AddWithValue(@"idScolarite", tr.IdScolarite);
                 cmd.Parameters.AddWithValue(@"montant", tr.Montant);
+                cmd.Parameters.AddWithValue(@"date", tr.DateVersement);
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
             }
@@ -34,7 +35,7 @@ namespace Nozel.Controller
             }
             con.getConnexion().Close();
         }
-        public void UpdateScolarite(Tranche tr)
+        public void UpdateTranche(Tranche tr)
         {
             try
             {
@@ -53,7 +54,7 @@ namespace Nozel.Controller
             con.getConnexion().Close();
         }
 
-        public void DeleteScolarite(Tranche tr)
+        public void DeleteTranche(Tranche tr)
         {
             try
             {
@@ -82,9 +83,9 @@ namespace Nozel.Controller
                 Tranche tr = new Tranche();
                 tr.IdTranche = rd.GetInt32(0);
                 tr.IdScolarite = rd.GetInt32(1);
-                tr.Montant = rd.GetInt32(2);
-                
-
+                tr.Montant = rd.GetDouble(2);
+                tr.DateVersement = rd.GetString(3);
+        
                 Tranches.Add(tr);
             }
             rd.Close();
@@ -106,7 +107,8 @@ namespace Nozel.Controller
             {
                 tr.IdTranche = rd.GetInt32(0);
                 tr.IdScolarite = rd.GetInt32(1);
-                tr.Montant = rd.GetInt32(2);
+                tr.Montant = rd.GetDouble(2);
+                tr.DateVersement = rd.GetString(3);
             }
             rd.Close();
             con.getConnexion().Close();
@@ -118,6 +120,18 @@ namespace Nozel.Controller
             {
                 return null;
             }
+        }
+
+        public Eleve getEleve(int id)
+        {
+            ScolariteController scC = new ScolariteController();
+            EleveController eleveController = new EleveController();
+
+            Tranche te= FindById(id);
+            Scolarite sc = scC.FindById(te.IdScolarite);
+            Eleve eleve = eleveController.FindById(sc.IdEleve);
+            
+            return eleve;
         }
     }
 }
