@@ -54,6 +54,7 @@ namespace Nozel.Views
         }
         private void enregistrerBtn_Click(object sender, EventArgs e)
         {
+            Utils.Utils.AddLog("boutton ajouter eleve click");
             eleve.Nom = nom.Text;
             eleve.Prenom=prenom.Text;
             eleve.DateNaiss = dateNaiss.Value.ToString().Substring(0,dateNaiss.Value.ToString().IndexOf(" "));

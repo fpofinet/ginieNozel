@@ -28,6 +28,7 @@ namespace Nozel.Views
 
         private void saveClasseBtn_Click(object sender, EventArgs e)
         {
+            Utils.Utils.AddLog("boutton save classe click");
             classe.Description = description.Text;
             classe.Designation = designation.Text;
             classe.Frais = double.Parse(frais.Text);

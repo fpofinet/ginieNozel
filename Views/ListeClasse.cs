@@ -45,7 +45,8 @@ namespace Nozel.Views
         }
 
         private void AjoutClasseBtn_Click(object sender, EventArgs e)
-        {  
+        {
+            Utils.Utils.AddLog("boutton new classe click");
             Utils.Utils.Open(new AjoutClasse(), Main.mainPanel);
         }
 
@@ -53,10 +54,12 @@ namespace Nozel.Views
         {
             if (e.RowIndex >= 0 && e.ColumnIndex == classeDataGrid.Columns["Modifier"].Index)
             {
+                Utils.Utils.AddLog("boutton modifier classe click");
                 Utils.Utils.Open(new AjoutClasse((Int32)classeDataGrid[0, e.RowIndex].Value), Main.mainPanel);
             }
             else if (e.RowIndex >= 0 && e.ColumnIndex == classeDataGrid.Columns["Supprimer"].Index)
             {
+                Utils.Utils.AddLog("boutton supprimer classe click");
                 string message = "Voulez-vous supprimer cette classe ?";
                 string title = "Suppression";
                 DialogResult result = MessageBox.Show(message, title, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);

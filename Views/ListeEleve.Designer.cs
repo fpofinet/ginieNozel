@@ -33,6 +33,11 @@
             this.eleveHeadPanel = new System.Windows.Forms.Panel();
             this.ListeEleveTitle = new System.Windows.Forms.Label();
             this.eleveDataGrid = new System.Windows.Forms.DataGridView();
+            this.addEleveBtn = new System.Windows.Forms.Button();
+            this.rechercherBox = new System.Windows.Forms.TextBox();
+            this.labelRechercher = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.classeBox = new System.Windows.Forms.ComboBox();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.matricule = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,13 +46,9 @@
             this.dateNaiss = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sexe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.classe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.details = new System.Windows.Forms.DataGridViewButtonColumn();
             this.modifier = new System.Windows.Forms.DataGridViewButtonColumn();
             this.supprimer = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.addEleveBtn = new System.Windows.Forms.Button();
-            this.rechercherBox = new System.Windows.Forms.TextBox();
-            this.labelRechercher = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.classeBox = new System.Windows.Forms.ComboBox();
             this.eleveHeadPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.eleveDataGrid)).BeginInit();
             this.panel1.SuspendLayout();
@@ -101,9 +102,10 @@
             this.dateNaiss,
             this.sexe,
             this.classe,
+            this.details,
             this.modifier,
             this.supprimer});
-            this.eleveDataGrid.Location = new System.Drawing.Point(170, 230);
+            this.eleveDataGrid.Location = new System.Drawing.Point(66, 230);
             this.eleveDataGrid.Name = "eleveDataGrid";
             this.eleveDataGrid.RowHeadersWidth = 51;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -111,9 +113,66 @@
             this.eleveDataGrid.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eleveDataGrid.RowTemplate.Height = 32;
             this.eleveDataGrid.RowTemplate.ReadOnly = true;
-            this.eleveDataGrid.Size = new System.Drawing.Size(1541, 744);
+            this.eleveDataGrid.Size = new System.Drawing.Size(1701, 744);
             this.eleveDataGrid.TabIndex = 1;
             this.eleveDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.eleveDataGrid_CellContentClick);
+            // 
+            // addEleveBtn
+            // 
+            this.addEleveBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
+            this.addEleveBtn.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addEleveBtn.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.addEleveBtn.Location = new System.Drawing.Point(66, 151);
+            this.addEleveBtn.Name = "addEleveBtn";
+            this.addEleveBtn.Size = new System.Drawing.Size(178, 53);
+            this.addEleveBtn.TabIndex = 2;
+            this.addEleveBtn.Text = "Ajouter";
+            this.addEleveBtn.UseVisualStyleBackColor = false;
+            this.addEleveBtn.Click += new System.EventHandler(this.addEleveBtn_Click);
+            // 
+            // rechercherBox
+            // 
+            this.rechercherBox.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rechercherBox.Location = new System.Drawing.Point(756, 151);
+            this.rechercherBox.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.rechercherBox.Multiline = true;
+            this.rechercherBox.Name = "rechercherBox";
+            this.rechercherBox.Size = new System.Drawing.Size(639, 53);
+            this.rechercherBox.TabIndex = 3;
+            this.rechercherBox.TextChanged += new System.EventHandler(this.rechercherBox_TextChanged);
+            // 
+            // labelRechercher
+            // 
+            this.labelRechercher.AutoSize = true;
+            this.labelRechercher.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRechercher.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.labelRechercher.Location = new System.Drawing.Point(25, 11);
+            this.labelRechercher.Name = "labelRechercher";
+            this.labelRechercher.Size = new System.Drawing.Size(149, 32);
+            this.labelRechercher.TabIndex = 5;
+            this.labelRechercher.Text = "Rechercher";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
+            this.panel1.Controls.Add(this.labelRechercher);
+            this.panel1.Location = new System.Drawing.Point(576, 151);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(187, 53);
+            this.panel1.TabIndex = 6;
+            // 
+            // classeBox
+            // 
+            this.classeBox.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.classeBox.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.classeBox.FormattingEnabled = true;
+            this.classeBox.ItemHeight = 32;
+            this.classeBox.Location = new System.Drawing.Point(1541, 164);
+            this.classeBox.Name = "classeBox";
+            this.classeBox.Size = new System.Drawing.Size(121, 40);
+            this.classeBox.TabIndex = 7;
+            this.classeBox.SelectedIndexChanged += new System.EventHandler(this.classeBox_SelectedIndexChanged);
             // 
             // id
             // 
@@ -181,6 +240,18 @@
             this.classe.ReadOnly = true;
             this.classe.Width = 85;
             // 
+            // details
+            // 
+            this.details.HeaderText = "Details";
+            this.details.MinimumWidth = 6;
+            this.details.Name = "details";
+            this.details.ReadOnly = true;
+            this.details.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.details.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.details.Text = "...";
+            this.details.UseColumnTextForButtonValue = true;
+            this.details.Width = 125;
+            // 
             // modifier
             // 
             this.modifier.HeaderText = "Modifier";
@@ -204,60 +275,6 @@
             this.supprimer.Text = "Supprimer";
             this.supprimer.UseColumnTextForButtonValue = true;
             this.supprimer.Width = 150;
-            // 
-            // addEleveBtn
-            // 
-            this.addEleveBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
-            this.addEleveBtn.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addEleveBtn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.addEleveBtn.Location = new System.Drawing.Point(170, 155);
-            this.addEleveBtn.Name = "addEleveBtn";
-            this.addEleveBtn.Size = new System.Drawing.Size(178, 53);
-            this.addEleveBtn.TabIndex = 2;
-            this.addEleveBtn.Text = "Ajouter";
-            this.addEleveBtn.UseVisualStyleBackColor = false;
-            this.addEleveBtn.Click += new System.EventHandler(this.addEleveBtn_Click);
-            // 
-            // rechercherBox
-            // 
-            this.rechercherBox.Location = new System.Drawing.Point(832, 155);
-            this.rechercherBox.Multiline = true;
-            this.rechercherBox.Name = "rechercherBox";
-            this.rechercherBox.Size = new System.Drawing.Size(515, 53);
-            this.rechercherBox.TabIndex = 3;
-            this.rechercherBox.TextChanged += new System.EventHandler(this.rechercherBox_TextChanged);
-            // 
-            // labelRechercher
-            // 
-            this.labelRechercher.AutoSize = true;
-            this.labelRechercher.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRechercher.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.labelRechercher.Location = new System.Drawing.Point(23, 9);
-            this.labelRechercher.Name = "labelRechercher";
-            this.labelRechercher.Size = new System.Drawing.Size(149, 32);
-            this.labelRechercher.TabIndex = 5;
-            this.labelRechercher.Text = "Rechercher";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
-            this.panel1.Controls.Add(this.labelRechercher);
-            this.panel1.Location = new System.Drawing.Point(645, 155);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(187, 53);
-            this.panel1.TabIndex = 6;
-            // 
-            // classeBox
-            // 
-            this.classeBox.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.classeBox.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.classeBox.FormattingEnabled = true;
-            this.classeBox.ItemHeight = 32;
-            this.classeBox.Location = new System.Drawing.Point(1473, 164);
-            this.classeBox.Name = "classeBox";
-            this.classeBox.Size = new System.Drawing.Size(121, 40);
-            this.classeBox.TabIndex = 7;
-            this.classeBox.SelectedIndexChanged += new System.EventHandler(this.classeBox_SelectedIndexChanged);
             // 
             // ListeEleve
             // 
@@ -289,6 +306,10 @@
         private System.Windows.Forms.Label ListeEleveTitle;
         private System.Windows.Forms.DataGridView eleveDataGrid;
         private System.Windows.Forms.Button addEleveBtn;
+        private System.Windows.Forms.TextBox rechercherBox;
+        private System.Windows.Forms.Label labelRechercher;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ComboBox classeBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn matricule;
         private System.Windows.Forms.DataGridViewTextBoxColumn nom;
@@ -297,11 +318,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dateNaiss;
         private System.Windows.Forms.DataGridViewTextBoxColumn sexe;
         private System.Windows.Forms.DataGridViewTextBoxColumn classe;
+        private System.Windows.Forms.DataGridViewButtonColumn details;
         private System.Windows.Forms.DataGridViewButtonColumn modifier;
         private System.Windows.Forms.DataGridViewButtonColumn supprimer;
-        private System.Windows.Forms.TextBox rechercherBox;
-        private System.Windows.Forms.Label labelRechercher;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox classeBox;
     }
 }

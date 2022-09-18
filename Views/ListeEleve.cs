@@ -23,6 +23,7 @@ namespace Nozel.Views
             InitializeComponent();
             LoadData();
             cla = clCtrl.FindAll();
+            classeBox.Items.Add("Tous");
             foreach (Classe c in cla)
             {
                 classeBox.Items.Add(c.Designation);
@@ -51,17 +52,21 @@ namespace Nozel.Views
 
         private void addEleveBtn_Click(object sender, EventArgs e)
         {
+            Utils.Utils.AddLog("boutton new eleve click");
             Utils.Utils.Open(new FormEleve(), Main.mainPanel);
         }
 
         private void eleveDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            
             if (e.RowIndex >= 0 && e.ColumnIndex == eleveDataGrid.Columns["Modifier"].Index)
             {
+                Utils.Utils.AddLog("boutton modifier eleve click");
                 Utils.Utils.Open(new FormEleve((Int32)eleveDataGrid[0, e.RowIndex].Value), Main.mainPanel);
             }
             else if (e.RowIndex >= 0 && e.ColumnIndex == eleveDataGrid.Columns["Supprimer"].Index)
             {
+                Utils.Utils.AddLog("boutton supprimer eleve click");
                 string message = "Voulez-vous supprimer cet eleve ?";
                 string title = "Suppression";
                 DialogResult result = MessageBox.Show(message, title, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -73,6 +78,11 @@ namespace Nozel.Views
                 }
                 LoadData();
             }
+            else if (e.RowIndex >= 0 && e.ColumnIndex == eleveDataGrid.Columns["details"].Index)
+            {
+                Utils.Utils.AddLog("boutton details eleve click");
+                Utils.Utils.Open(new FicheEleve((Int32)eleveDataGrid[0, e.RowIndex].Value), Main.mainPanel);
+            }
             else
             {
                 return;
@@ -81,6 +91,7 @@ namespace Nozel.Views
 
         private void rechercherBox_TextChanged(object sender, EventArgs e)
         {
+            Utils.Utils.AddLog("recherche eleve");
             List<Eleve> els;
             els=eleveControl.Search(rechercherBox.Text);
             if (els.Count > 0)
@@ -99,21 +110,21 @@ namespace Nozel.Views
                     eleveDataGrid.Rows[eleveDataGrid.Rows.Count - 1].Cells["classe"].Value = clCtrl.FindById(elt.IdClasse).Designation;
                 }
             }
-            else
-            {
-                string message = "Aucun resultat trouvé";
-                string title = "Recherche";
-                MessageBox.Show(message, title);
-                eleveDataGrid.Rows.Clear();
-            }
         }
 
         private void classeBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             string item = classeBox.SelectedItem.ToString();
-            Console.WriteLine(item);
             List<Eleve> result = new List<Eleve>();
-            result = eleveControl.FindAllByClasse(item);
+            if(item.ToUpper() == "TOUS")
+            {
+                result = eleveControl.FindAll();
+            }
+            else
+            {
+                result = eleveControl.FindAllByClasse(item);
+            }
+            
 
             eleveDataGrid.Rows.Clear();
             foreach (Eleve elt in result)

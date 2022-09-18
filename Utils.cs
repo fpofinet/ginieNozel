@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,9 @@ namespace Utils
     internal class Utils
     {
         public static Form activeForm;
-        public static void Open(Form child,Panel parent)
+        
+       
+    public static void Open(Form child,Panel parent)
         {
             if (activeForm != null)
             {
@@ -41,6 +44,27 @@ namespace Utils
             int year = int.Parse(date.Substring(date.IndexOf("/") + 4, 4));
             DateTime dat = new DateTime(year, month, day);
             return dat;
+        }
+
+        public static void AddLog(string message)
+        {
+            string appdata = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string myFile = "debug.txt";
+            string mydir;
+
+            mydir = appdata + "\\nozel";
+            if (!Directory.Exists(mydir))
+            {
+                Directory.CreateDirectory(mydir);
+            }
+
+            myFile = mydir + "\\debug.txt";
+            if (!File.Exists(myFile))
+            {
+                File.Create(myFile);
+            }
+
+            File.AppendAllText(myFile, message+DateTime.Now + Environment.NewLine);
         }
     }
 }

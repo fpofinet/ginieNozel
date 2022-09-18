@@ -13,7 +13,6 @@ namespace Nozel.Controller
 
         string path;
         private  string appdata = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-        private string myFile="debug.txt";
         private string mydir;
         private SQLiteConnection connexion;
         public Connexion()
@@ -30,13 +29,6 @@ namespace Nozel.Controller
                 Directory.CreateDirectory(mydir);
             }
 
-            // creation du fichier log
-            myFile = mydir + "\\debug.txt";
-            if (!File.Exists(myFile))
-            {
-                File.Create(myFile);
-            }
-
             //creation du fichier de la base de donnees
             path = mydir + "\\dataApp.db";
             if (!System.IO.File.Exists(path))
@@ -48,11 +40,12 @@ namespace Nozel.Controller
                 {
                     connexion.Open();
                     string sql0 = "CREATE TABLE classe (idClasse INTEGER,designation text,description text,effectif INTEGER,frais REAL,PRIMARY KEY('idClasse' AUTOINCREMENT))";
-                    string sql1 = "CREATE TABLE eleve (idEleve INTEGER,matricule text,nom text,prenom text,dateNaiss text,sexe text,idClasse INTEGER,PRIMARY KEY('idEleve' AUTOINCREMENT),FOREIGN KEY (idClasse) REFERENCES classe (idClasse))";
+                    string sql1 = "CREATE TABLE eleve (idEleve INTEGER,matricule text,nom text,prenom text,dateNaiss text,sexe text,idClasse INTEGER," +
+                                 "nomTuteur	TEXT,contactTuteur TEXT,adresse text,PRIMARY KEY('idEleve' AUTOINCREMENT),FOREIGN KEY (idClasse) REFERENCES classe (idClasse))";
                     string sql2 = "CREATE TABLE matiere(idMatiere INTEGER,designation text,description text,PRIMARY KEY('idMatiere' AUTOINCREMENT))";
                     string sql3 = "CREATE TABLE note(idNote INTEGER,idMatiere INTEGER,idEleve INTEGER,note REAL,PRIMARY KEY('idNote' AUTOINCREMENT),FOREIGN KEY (idMatiere) REFERENCES matiere (idMatiere),FOREIGN KEY (idEleve) REFERENCES eleve (idEleve))";
                     string sql4 = "CREATE TABLE scolarite(idScolarite INTEGER,idEleve INTEGER,idClasse INTEGER,total REAL,PRIMARY KEY('idScolarite' AUTOINCREMENT),FOREIGN KEY (idEleve) REFERENCES eleve (idEleve),FOREIGN KEY (idClasse) REFERENCES classe (idClasse))";
-                    string sql5 = "CREATE TABLE tranche(idTranche INTEGER,idScolarite INTEGER, montant REAL,PRIMARY KEY('idTranche' AUTOINCREMENT))";
+                    string sql5 = "CREATE TABLE tranche(idTranche INTEGER,idScolarite INTEGER, montant REAL,createdAt TEXT, PRIMARY KEY('idTranche' AUTOINCREMENT))";
                     SQLiteCommand commande0 = new SQLiteCommand(sql0, connexion);
                     SQLiteCommand commande1 = new SQLiteCommand(sql1, connexion);
                     SQLiteCommand commande2 = new SQLiteCommand(sql2, connexion);
@@ -67,15 +60,12 @@ namespace Nozel.Controller
                     commande5.ExecuteNonQuery();
                 } catch (Exception ex)
                 {
-                    File.AppendAllText(myFile, "erreur lors de la creation de la base de données" + DateTime.Now + Environment.NewLine);
-                    File.AppendAllText(myFile, ex.Message + DateTime.Now + Environment.NewLine);
+                    Utils.Utils.AddLog("[erreur]"+ ex.Message);
+                   
                 }
                 connexion.Close();
-                File.AppendAllText(myFile, "base de donne creer avec succes " + DateTime.Now + Environment.NewLine);
-            }
-            else
-            {
-                File.AppendAllText(myFile, "la base de donnees existe deja " + DateTime.Now + Environment.NewLine);
+                Utils.Utils.AddLog("base de donnees creer avec succes");
+                
             }
         }
         public SQLiteConnection getConnexion()

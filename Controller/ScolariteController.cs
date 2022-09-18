@@ -34,7 +34,8 @@ namespace Nozel.Controller
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Utils.Utils.AddLog("[erreur]" + ex.Message);
+                //Console.WriteLine(ex.Message);
             }
             con.getConnexion().Close();
         }
@@ -55,7 +56,8 @@ namespace Nozel.Controller
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Utils.Utils.AddLog("[erreur]" + ex.Message);
+                //Console.WriteLine(ex.Message);
             }
             con.getConnexion().Close();
         }
@@ -73,7 +75,8 @@ namespace Nozel.Controller
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Utils.Utils.AddLog("[erreur]" + ex.Message);
+                //Console.WriteLine(ex.Message);
             }
             con.getConnexion().Close();
         }
@@ -201,7 +204,8 @@ namespace Nozel.Controller
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Utils.Utils.AddLog("[erreur]" + ex.Message);
+                //Console.WriteLine(ex.Message);
             }
             con.getConnexion().Close();
         }

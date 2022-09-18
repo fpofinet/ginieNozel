@@ -41,6 +41,7 @@ namespace Nozel.Views
 
         private void payerBtn_Click(object sender, EventArgs e)
         {
+            Utils.Utils.AddLog("boutton payement click");
             scolarite = scCtrl.FindByEleve(eleve.IdEleve);
             if(scolarite == null)
             {

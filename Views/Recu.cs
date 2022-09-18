@@ -39,7 +39,8 @@ namespace Nozel.Views
 
         private void PrintBtn_Click(object sender, EventArgs e)
         {
-           // this.detailsStudentPanel
+            // this.detailsStudentPanel
+            Utils.Utils.AddLog("boutton print recu click");
             Graphics g = this.CreateGraphics();
             bmp = new Bitmap(this.detailsStudentPanel.Size.Width+60, this.detailsStudentPanel.Size.Height+75, g);
             Graphics mg = Graphics.FromImage(bmp);
