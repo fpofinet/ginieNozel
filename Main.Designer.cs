@@ -34,13 +34,13 @@
             this.eleveBtn = new System.Windows.Forms.Button();
             this.BulletinBtn = new System.Windows.Forms.Button();
             this.classeBtn = new System.Windows.Forms.Button();
-            mainPanel = new System.Windows.Forms.Panel();
+             mainPanel = new System.Windows.Forms.Panel();
             this.controlPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // controlPanel
             // 
-            this.controlPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
+            this.controlPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(32)))), ((int)(((byte)(42)))));
             this.controlPanel.Controls.Add(this.homeBtn);
             this.controlPanel.Controls.Add(this.eleveBtn);
             this.controlPanel.Controls.Add(this.BulletinBtn);
@@ -53,7 +53,7 @@
             // 
             // homeBtn
             // 
-            this.homeBtn.BackColor = System.Drawing.Color.Transparent;
+            this.homeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
             this.homeBtn.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homeBtn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.homeBtn.Image = ((System.Drawing.Image)(resources.GetObject("homeBtn.Image")));
@@ -70,7 +70,7 @@
             // 
             // eleveBtn
             // 
-            this.eleveBtn.BackColor = System.Drawing.Color.Transparent;
+            this.eleveBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
             this.eleveBtn.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eleveBtn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.eleveBtn.Image = ((System.Drawing.Image)(resources.GetObject("eleveBtn.Image")));
@@ -86,7 +86,7 @@
             // 
             // BulletinBtn
             // 
-            this.BulletinBtn.BackColor = System.Drawing.Color.Transparent;
+            this.BulletinBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
             this.BulletinBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BulletinBtn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.BulletinBtn.Image = ((System.Drawing.Image)(resources.GetObject("BulletinBtn.Image")));
@@ -102,7 +102,7 @@
             // 
             // classeBtn
             // 
-            this.classeBtn.BackColor = System.Drawing.Color.Transparent;
+            this.classeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
             this.classeBtn.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.classeBtn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.classeBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -116,16 +116,16 @@
             // 
             // mainPanel
             // 
-            mainPanel.AutoScroll = true;
-            mainPanel.AutoSize = true;
-            mainPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            mainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            mainPanel.ForeColor = System.Drawing.SystemColors.ControlText;
-            mainPanel.Location = new System.Drawing.Point(231, 0);
-            mainPanel.Name = "mainPanel";
-            mainPanel.Size = new System.Drawing.Size(1474, 753);
-            mainPanel.TabIndex = 2;
+             mainPanel.AutoScroll = true;
+             mainPanel.AutoSize = true;
+             mainPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+             mainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+             mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+             mainPanel.ForeColor = System.Drawing.SystemColors.ControlText;
+             mainPanel.Location = new System.Drawing.Point(231, 0);
+             mainPanel.Name = "mainPanel";
+             mainPanel.Size = new System.Drawing.Size(1474, 753);
+             mainPanel.TabIndex = 2;
             // 
             // Main
             // 
@@ -135,7 +135,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1705, 753);
-            this.Controls.Add(mainPanel);
+            this.Controls.Add( mainPanel);
             this.Controls.Add(this.controlPanel);
             this.MinimumSize = new System.Drawing.Size(1150, 600);
             this.Name = "Main";

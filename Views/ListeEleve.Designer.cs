@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.eleveHeadPanel = new System.Windows.Forms.Panel();
             this.ListeEleveTitle = new System.Windows.Forms.Label();
             this.eleveDataGrid = new System.Windows.Forms.DataGridView();
-            this.addEleveBtn = new System.Windows.Forms.Button();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.matricule = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,6 +43,7 @@
             this.classe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modifier = new System.Windows.Forms.DataGridViewButtonColumn();
             this.supprimer = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.addEleveBtn = new System.Windows.Forms.Button();
             this.rechercherBox = new System.Windows.Forms.TextBox();
             this.labelRechercher = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -55,7 +55,7 @@
             // 
             // eleveHeadPanel
             // 
-            this.eleveHeadPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(27)))), ((int)(((byte)(31)))));
+            this.eleveHeadPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
             this.eleveHeadPanel.Controls.Add(this.ListeEleveTitle);
             this.eleveHeadPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.eleveHeadPanel.Location = new System.Drawing.Point(0, 0);
@@ -67,7 +67,7 @@
             // 
             this.ListeEleveTitle.AutoSize = true;
             this.ListeEleveTitle.Font = new System.Drawing.Font("Times New Roman", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ListeEleveTitle.ForeColor = System.Drawing.SystemColors.Control;
+            this.ListeEleveTitle.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ListeEleveTitle.Location = new System.Drawing.Point(567, 9);
             this.ListeEleveTitle.Name = "ListeEleveTitle";
             this.ListeEleveTitle.Size = new System.Drawing.Size(459, 53);
@@ -83,14 +83,14 @@
             this.eleveDataGrid.AllowUserToResizeRows = false;
             this.eleveDataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(195)))), ((int)(((byte)(206)))));
             this.eleveDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.eleveDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.eleveDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.eleveDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.eleveDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -106,26 +106,14 @@
             this.eleveDataGrid.Location = new System.Drawing.Point(170, 230);
             this.eleveDataGrid.Name = "eleveDataGrid";
             this.eleveDataGrid.RowHeadersWidth = 51;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eleveDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eleveDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.eleveDataGrid.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eleveDataGrid.RowTemplate.Height = 32;
             this.eleveDataGrid.RowTemplate.ReadOnly = true;
-            this.eleveDataGrid.Size = new System.Drawing.Size(1527, 744);
+            this.eleveDataGrid.Size = new System.Drawing.Size(1541, 744);
             this.eleveDataGrid.TabIndex = 1;
             this.eleveDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.eleveDataGrid_CellContentClick);
-            // 
-            // addEleveBtn
-            // 
-            this.addEleveBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(27)))), ((int)(((byte)(31)))));
-            this.addEleveBtn.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addEleveBtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.addEleveBtn.Location = new System.Drawing.Point(170, 155);
-            this.addEleveBtn.Name = "addEleveBtn";
-            this.addEleveBtn.Size = new System.Drawing.Size(178, 53);
-            this.addEleveBtn.TabIndex = 2;
-            this.addEleveBtn.Text = "Nouveau";
-            this.addEleveBtn.UseVisualStyleBackColor = false;
-            this.addEleveBtn.Click += new System.EventHandler(this.addEleveBtn_Click);
             // 
             // id
             // 
@@ -142,6 +130,7 @@
             this.matricule.MinimumWidth = 6;
             this.matricule.Name = "matricule";
             this.matricule.ReadOnly = true;
+            this.matricule.Width = 125;
             // 
             // nom
             // 
@@ -216,6 +205,19 @@
             this.supprimer.UseColumnTextForButtonValue = true;
             this.supprimer.Width = 150;
             // 
+            // addEleveBtn
+            // 
+            this.addEleveBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
+            this.addEleveBtn.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addEleveBtn.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.addEleveBtn.Location = new System.Drawing.Point(170, 155);
+            this.addEleveBtn.Name = "addEleveBtn";
+            this.addEleveBtn.Size = new System.Drawing.Size(178, 53);
+            this.addEleveBtn.TabIndex = 2;
+            this.addEleveBtn.Text = "Ajouter";
+            this.addEleveBtn.UseVisualStyleBackColor = false;
+            this.addEleveBtn.Click += new System.EventHandler(this.addEleveBtn_Click);
+            // 
             // rechercherBox
             // 
             this.rechercherBox.Location = new System.Drawing.Point(832, 155);
@@ -229,7 +231,7 @@
             // 
             this.labelRechercher.AutoSize = true;
             this.labelRechercher.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRechercher.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelRechercher.ForeColor = System.Drawing.SystemColors.ControlText;
             this.labelRechercher.Location = new System.Drawing.Point(23, 9);
             this.labelRechercher.Name = "labelRechercher";
             this.labelRechercher.Size = new System.Drawing.Size(149, 32);
@@ -238,7 +240,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(27)))), ((int)(((byte)(31)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
             this.panel1.Controls.Add(this.labelRechercher);
             this.panel1.Location = new System.Drawing.Point(645, 155);
             this.panel1.Name = "panel1";
@@ -247,13 +249,13 @@
             // 
             // classeBox
             // 
-            this.classeBox.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.classeBox.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.classeBox.ForeColor = System.Drawing.SystemColors.ControlText;
             this.classeBox.FormattingEnabled = true;
-            this.classeBox.ItemHeight = 31;
+            this.classeBox.ItemHeight = 32;
             this.classeBox.Location = new System.Drawing.Point(1473, 164);
             this.classeBox.Name = "classeBox";
-            this.classeBox.Size = new System.Drawing.Size(121, 39);
+            this.classeBox.Size = new System.Drawing.Size(121, 40);
             this.classeBox.TabIndex = 7;
             this.classeBox.SelectedIndexChanged += new System.EventHandler(this.classeBox_SelectedIndexChanged);
             // 

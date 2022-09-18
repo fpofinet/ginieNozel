@@ -30,22 +30,22 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.rechercher_panel = new System.Windows.Forms.Panel();
-            this.rechercherData = new System.Windows.Forms.DataGridView();
-            this.rechercher = new System.Windows.Forms.TextBox();
-            this.nom_label = new System.Windows.Forms.Label();
-            this.head_panel = new System.Windows.Forms.Panel();
-            this.headTitle_label = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.nom_label = new System.Windows.Forms.Label();
+            this.rechercherData = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sexe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.classe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.payer = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.rechercher = new System.Windows.Forms.TextBox();
+            this.head_panel = new System.Windows.Forms.Panel();
+            this.headTitle_label = new System.Windows.Forms.Label();
             this.rechercher_panel.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rechercherData)).BeginInit();
             this.head_panel.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // rechercher_panel
@@ -59,6 +59,28 @@
             this.rechercher_panel.Size = new System.Drawing.Size(1004, 536);
             this.rechercher_panel.TabIndex = 0;
             this.rechercher_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
+            this.panel1.Controls.Add(this.nom_label);
+            this.panel1.Location = new System.Drawing.Point(110, 38);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(224, 43);
+            this.panel1.TabIndex = 4;
+            // 
+            // nom_label
+            // 
+            this.nom_label.AutoSize = true;
+            this.nom_label.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
+            this.nom_label.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nom_label.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.nom_label.Location = new System.Drawing.Point(28, 9);
+            this.nom_label.Name = "nom_label";
+            this.nom_label.Size = new System.Drawing.Size(178, 25);
+            this.nom_label.TabIndex = 0;
+            this.nom_label.Text = "RECHERCHER";
+            this.nom_label.Click += new System.EventHandler(this.nom_label_Click);
             // 
             // rechercherData
             // 
@@ -90,58 +112,6 @@
             this.rechercherData.Size = new System.Drawing.Size(990, 383);
             this.rechercherData.TabIndex = 3;
             this.rechercherData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.rechercherData_CellContentClick);
-            // 
-            // rechercher
-            // 
-            this.rechercher.Location = new System.Drawing.Point(331, 38);
-            this.rechercher.Multiline = true;
-            this.rechercher.Name = "rechercher";
-            this.rechercher.Size = new System.Drawing.Size(633, 43);
-            this.rechercher.TabIndex = 1;
-            this.rechercher.TextChanged += new System.EventHandler(this.rechercher_TextChanged);
-            // 
-            // nom_label
-            // 
-            this.nom_label.AutoSize = true;
-            this.nom_label.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(27)))), ((int)(((byte)(31)))));
-            this.nom_label.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nom_label.ForeColor = System.Drawing.SystemColors.Control;
-            this.nom_label.Location = new System.Drawing.Point(28, 9);
-            this.nom_label.Name = "nom_label";
-            this.nom_label.Size = new System.Drawing.Size(178, 25);
-            this.nom_label.TabIndex = 0;
-            this.nom_label.Text = "RECHERCHER";
-            this.nom_label.Click += new System.EventHandler(this.nom_label_Click);
-            // 
-            // head_panel
-            // 
-            this.head_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(27)))), ((int)(((byte)(31)))));
-            this.head_panel.Controls.Add(this.headTitle_label);
-            this.head_panel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.head_panel.Location = new System.Drawing.Point(0, 0);
-            this.head_panel.Name = "head_panel";
-            this.head_panel.Size = new System.Drawing.Size(1780, 77);
-            this.head_panel.TabIndex = 1;
-            // 
-            // headTitle_label
-            // 
-            this.headTitle_label.AutoSize = true;
-            this.headTitle_label.Font = new System.Drawing.Font("Times New Roman", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.headTitle_label.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.headTitle_label.Location = new System.Drawing.Point(513, 9);
-            this.headTitle_label.Name = "headTitle_label";
-            this.headTitle_label.Size = new System.Drawing.Size(570, 53);
-            this.headTitle_label.TabIndex = 0;
-            this.headTitle_label.Text = "PAYEMENT SCOLARITE";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(27)))), ((int)(((byte)(31)))));
-            this.panel1.Controls.Add(this.nom_label);
-            this.panel1.Location = new System.Drawing.Point(110, 38);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(224, 43);
-            this.panel1.TabIndex = 4;
             // 
             // id
             // 
@@ -192,6 +162,36 @@
             this.payer.UseColumnTextForButtonValue = true;
             this.payer.Width = 125;
             // 
+            // rechercher
+            // 
+            this.rechercher.Location = new System.Drawing.Point(331, 38);
+            this.rechercher.Multiline = true;
+            this.rechercher.Name = "rechercher";
+            this.rechercher.Size = new System.Drawing.Size(633, 43);
+            this.rechercher.TabIndex = 1;
+            this.rechercher.TextChanged += new System.EventHandler(this.rechercher_TextChanged);
+            // 
+            // head_panel
+            // 
+            this.head_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
+            this.head_panel.Controls.Add(this.headTitle_label);
+            this.head_panel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.head_panel.Location = new System.Drawing.Point(0, 0);
+            this.head_panel.Name = "head_panel";
+            this.head_panel.Size = new System.Drawing.Size(1780, 77);
+            this.head_panel.TabIndex = 1;
+            // 
+            // headTitle_label
+            // 
+            this.headTitle_label.AutoSize = true;
+            this.headTitle_label.Font = new System.Drawing.Font("Times New Roman", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.headTitle_label.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.headTitle_label.Location = new System.Drawing.Point(513, 9);
+            this.headTitle_label.Name = "headTitle_label";
+            this.headTitle_label.Size = new System.Drawing.Size(570, 53);
+            this.headTitle_label.TabIndex = 0;
+            this.headTitle_label.Text = "PAYEMENT SCOLARITE";
+            // 
             // ScolariteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -205,11 +205,11 @@
             this.Load += new System.EventHandler(this.ScolariteForm_Load);
             this.rechercher_panel.ResumeLayout(false);
             this.rechercher_panel.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rechercherData)).EndInit();
             this.head_panel.ResumeLayout(false);
             this.head_panel.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }

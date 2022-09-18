@@ -21,26 +21,15 @@ namespace Nozel.Views
         public HomeForm()
         {
             InitializeComponent();
-            LoadData();
-            LoadStat();
-            CalcStat();
-            
+            LoadData();  
         }
 
        
 
         private void LoadData()
         {
-           
-        }
-
-        private void LoadStat()
-        {
-            
-        }
-
-        private void CalcStat()
-        {   
+            countEleveLabel.Text= elCtrl.FindAll().Count.ToString();
+            countSalleLabel.Text = clCtrl.FindAll().Count.ToString();
         }
 
         private void label1_Click(object sender, EventArgs e)

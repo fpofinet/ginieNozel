@@ -28,19 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.AjoutClasseBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.classeDataGrid = new System.Windows.Forms.DataGridView();
-            this.listeClasseHead = new System.Windows.Forms.Panel();
-            this.addClasseTitle = new System.Windows.Forms.Label();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.designation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.effectif = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modifier = new System.Windows.Forms.DataGridViewButtonColumn();
             this.supprimer = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.listeClasseHead = new System.Windows.Forms.Panel();
+            this.addClasseTitle = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.classeDataGrid)).BeginInit();
             this.listeClasseHead.SuspendLayout();
@@ -48,14 +49,14 @@
             // 
             // AjoutClasseBtn
             // 
-            this.AjoutClasseBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(27)))), ((int)(((byte)(31)))));
-            this.AjoutClasseBtn.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AjoutClasseBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.AjoutClasseBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
+            this.AjoutClasseBtn.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AjoutClasseBtn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.AjoutClasseBtn.Location = new System.Drawing.Point(411, 137);
             this.AjoutClasseBtn.Name = "AjoutClasseBtn";
             this.AjoutClasseBtn.Size = new System.Drawing.Size(180, 52);
             this.AjoutClasseBtn.TabIndex = 1;
-            this.AjoutClasseBtn.Text = "Nouveau";
+            this.AjoutClasseBtn.Text = "Ajouter";
             this.AjoutClasseBtn.UseVisualStyleBackColor = false;
             this.AjoutClasseBtn.Click += new System.EventHandler(this.AjoutClasseBtn_Click);
             // 
@@ -79,14 +80,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.classeDataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(195)))), ((int)(((byte)(206)))));
             this.classeDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.classeDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.classeDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.classeDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.classeDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -98,35 +99,22 @@
             this.classeDataGrid.Location = new System.Drawing.Point(3, 3);
             this.classeDataGrid.Name = "classeDataGrid";
             this.classeDataGrid.ReadOnly = true;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.classeDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.classeDataGrid.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.classeDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.classeDataGrid.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.classeDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.classeDataGrid.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.classeDataGrid.RowTemplate.Height = 32;
             this.classeDataGrid.Size = new System.Drawing.Size(1055, 562);
             this.classeDataGrid.TabIndex = 0;
             this.classeDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.classeDataGrid_CellContentClick);
-            // 
-            // listeClasseHead
-            // 
-            this.listeClasseHead.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(27)))), ((int)(((byte)(31)))));
-            this.listeClasseHead.Controls.Add(this.addClasseTitle);
-            this.listeClasseHead.Dock = System.Windows.Forms.DockStyle.Top;
-            this.listeClasseHead.ForeColor = System.Drawing.SystemColors.Control;
-            this.listeClasseHead.Location = new System.Drawing.Point(0, 0);
-            this.listeClasseHead.Name = "listeClasseHead";
-            this.listeClasseHead.Size = new System.Drawing.Size(1779, 68);
-            this.listeClasseHead.TabIndex = 3;
-            // 
-            // addClasseTitle
-            // 
-            this.addClasseTitle.AutoSize = true;
-            this.addClasseTitle.Font = new System.Drawing.Font("Times New Roman", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addClasseTitle.Location = new System.Drawing.Point(517, 9);
-            this.addClasseTitle.Name = "addClasseTitle";
-            this.addClasseTitle.Size = new System.Drawing.Size(725, 53);
-            this.addClasseTitle.TabIndex = 0;
-            this.addClasseTitle.Text = "LISTE DES SALLES DE CLASSE";
             // 
             // id
             // 
@@ -180,6 +168,28 @@
             this.supprimer.Text = "Supprimer";
             this.supprimer.UseColumnTextForButtonValue = true;
             this.supprimer.Width = 125;
+            // 
+            // listeClasseHead
+            // 
+            this.listeClasseHead.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
+            this.listeClasseHead.Controls.Add(this.addClasseTitle);
+            this.listeClasseHead.Dock = System.Windows.Forms.DockStyle.Top;
+            this.listeClasseHead.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.listeClasseHead.Location = new System.Drawing.Point(0, 0);
+            this.listeClasseHead.Name = "listeClasseHead";
+            this.listeClasseHead.Size = new System.Drawing.Size(1779, 68);
+            this.listeClasseHead.TabIndex = 3;
+            // 
+            // addClasseTitle
+            // 
+            this.addClasseTitle.AutoSize = true;
+            this.addClasseTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
+            this.addClasseTitle.Font = new System.Drawing.Font("Times New Roman", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addClasseTitle.Location = new System.Drawing.Point(517, 9);
+            this.addClasseTitle.Name = "addClasseTitle";
+            this.addClasseTitle.Size = new System.Drawing.Size(725, 53);
+            this.addClasseTitle.TabIndex = 0;
+            this.addClasseTitle.Text = "LISTE DES SALLES DE CLASSE";
             // 
             // FormClasse
             // 

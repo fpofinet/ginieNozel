@@ -51,12 +51,14 @@ namespace Nozel.Views
                 scCtrl.InsertScolarite(scolarite);
                 tranche.IdScolarite = scCtrl.FindByEleve(eleve.IdEleve).Id;
                 tranche.Montant = int.Parse(montant.Text);
+                tranche.DateVersement = DateTime.Today.ToShortDateString();
                 trCtrl.InsertTranche(tranche);
             }
             else
             {
                 tranche.IdScolarite = scolarite.Id;
                 tranche.Montant = int.Parse(montant.Text);
+                tranche.DateVersement = DateTime.Today.ToShortDateString();
                 trCtrl.InsertTranche(tranche);
                 scCtrl.AddScolarite(scolarite.Id, int.Parse(montant.Text));
             }
@@ -65,7 +67,7 @@ namespace Nozel.Views
             string title = "Success payement";
             
             MessageBox.Show(message, title);
-            Utils.Utils.Open(new FicheEleve(eleve.IdEleve), Main.mainPanel);
+            Utils.Utils.Open(new Recu(eleve.IdEleve, int.Parse(montant.Text)), Main.mainPanel) ;
 
         }
     }

@@ -47,7 +47,7 @@
             // 
             this.title_label.AutoSize = true;
             this.title_label.Font = new System.Drawing.Font("Times New Roman", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.title_label.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.title_label.ForeColor = System.Drawing.SystemColors.ControlText;
             this.title_label.Location = new System.Drawing.Point(693, 9);
             this.title_label.Name = "title_label";
             this.title_label.Size = new System.Drawing.Size(570, 53);
@@ -157,7 +157,7 @@
             // 
             // head_panel
             // 
-            this.head_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(27)))), ((int)(((byte)(31)))));
+            this.head_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
             this.head_panel.Controls.Add(this.title_label);
             this.head_panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.head_panel.Location = new System.Drawing.Point(0, 0);

@@ -33,7 +33,7 @@
             this.title_label = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.countEleveLabel = new System.Windows.Forms.Label();
             this.eleveLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -45,7 +45,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.countSalleLabel = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -68,7 +68,7 @@
             // 
             // head_panel
             // 
-            this.head_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(27)))), ((int)(((byte)(31)))));
+            this.head_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
             this.head_panel.Controls.Add(this.title_label);
             this.head_panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.head_panel.ForeColor = System.Drawing.SystemColors.ControlLight;
@@ -81,7 +81,7 @@
             // 
             this.title_label.AutoSize = true;
             this.title_label.Font = new System.Drawing.Font("Times New Roman", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.title_label.ForeColor = System.Drawing.Color.White;
+            this.title_label.ForeColor = System.Drawing.SystemColors.ControlText;
             this.title_label.Location = new System.Drawing.Point(439, 9);
             this.title_label.Name = "title_label";
             this.title_label.Size = new System.Drawing.Size(505, 53);
@@ -92,7 +92,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(154)))), ((int)(((byte)(163)))));
             this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.countEleveLabel);
             this.panel1.Controls.Add(this.eleveLabel);
             this.panel1.Location = new System.Drawing.Point(106, 381);
             this.panel1.Name = "panel1";
@@ -111,16 +111,16 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.eleveLabel_Click);
             // 
-            // label4
+            // countEleveLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(7, 8);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 68);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "89";
-            this.label4.Click += new System.EventHandler(this.eleveLabel_Click);
+            this.countEleveLabel.AutoSize = true;
+            this.countEleveLabel.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.countEleveLabel.Location = new System.Drawing.Point(7, 8);
+            this.countEleveLabel.Name = "countEleveLabel";
+            this.countEleveLabel.Size = new System.Drawing.Size(89, 68);
+            this.countEleveLabel.TabIndex = 2;
+            this.countEleveLabel.Text = "89";
+            this.countEleveLabel.Click += new System.EventHandler(this.eleveLabel_Click);
             // 
             // eleveLabel
             // 
@@ -235,7 +235,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(154)))), ((int)(((byte)(163)))));
-            this.panel5.Controls.Add(this.label5);
+            this.panel5.Controls.Add(this.countSalleLabel);
             this.panel5.Controls.Add(this.pictureBox5);
             this.panel5.Controls.Add(this.label2);
             this.panel5.Location = new System.Drawing.Point(626, 381);
@@ -244,16 +244,16 @@
             this.panel5.TabIndex = 5;
             this.panel5.Click += new System.EventHandler(this.label2_Click);
             // 
-            // label5
+            // countSalleLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(22, 8);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(59, 68);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "9";
-            this.label5.Click += new System.EventHandler(this.label2_Click);
+            this.countSalleLabel.AutoSize = true;
+            this.countSalleLabel.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.countSalleLabel.Location = new System.Drawing.Point(22, 8);
+            this.countSalleLabel.Name = "countSalleLabel";
+            this.countSalleLabel.Size = new System.Drawing.Size(59, 68);
+            this.countSalleLabel.TabIndex = 2;
+            this.countSalleLabel.Text = "9";
+            this.countSalleLabel.Click += new System.EventHandler(this.label2_Click);
             // 
             // pictureBox5
             // 
@@ -359,12 +359,12 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label countEleveLabel;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label countSalleLabel;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel6;

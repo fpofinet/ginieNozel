@@ -28,10 +28,6 @@ namespace Utils
 
         public static int CalcAge(string date)
         {
-            //int day = int.Parse(date.Substring(0, 2));
-            //int month = int.Parse(date.Substring(date.IndexOf("/") + 1, 2));
-            //int year = int.Parse(date.Substring(date.IndexOf("/") + 4, 4));
-            //DateTime dt = new DateTime(year, month, day);
             DateTime dt = StringToDate(date);
             DateTime now = DateTime.Today;
             TimeSpan interval = now - dt;

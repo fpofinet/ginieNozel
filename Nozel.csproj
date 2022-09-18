@@ -71,11 +71,11 @@
     <Compile Include="Views\AjoutClasse.Designer.cs">
       <DependentUpon>AjoutClasse.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FicheEleve.cs">
+    <Compile Include="Views\Recu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FicheEleve.Designer.cs">
-      <DependentUpon>FicheEleve.cs</DependentUpon>
+    <Compile Include="Views\Recu.Designer.cs">
+      <DependentUpon>Recu.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FormBulletin.cs">
       <SubType>Form</SubType>
@@ -135,8 +135,8 @@
     <EmbeddedResource Include="Views\AjoutClasse.resx">
       <DependentUpon>AjoutClasse.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FicheEleve.resx">
-      <DependentUpon>FicheEleve.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Recu.resx">
+      <DependentUpon>Recu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FormBulletin.resx">
       <DependentUpon>FormBulletin.cs</DependentUpon>

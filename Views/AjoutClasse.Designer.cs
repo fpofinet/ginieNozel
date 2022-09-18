@@ -74,6 +74,7 @@
             // 
             this.titleClasse_label.AutoSize = true;
             this.titleClasse_label.Font = new System.Drawing.Font("Times New Roman", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleClasse_label.ForeColor = System.Drawing.SystemColors.ControlText;
             this.titleClasse_label.Location = new System.Drawing.Point(589, 9);
             this.titleClasse_label.Name = "titleClasse_label";
             this.titleClasse_label.Size = new System.Drawing.Size(479, 49);
@@ -103,7 +104,6 @@
             this.designation.Name = "designation";
             this.designation.Size = new System.Drawing.Size(248, 40);
             this.designation.TabIndex = 4;
-            
             // 
             // annulerClasseBtn
             // 
@@ -174,7 +174,7 @@
             // 
             // titleClasse_panel
             // 
-            this.titleClasse_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(27)))), ((int)(((byte)(31)))));
+            this.titleClasse_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
             this.titleClasse_panel.Controls.Add(this.titleClasse_label);
             this.titleClasse_panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.titleClasse_panel.ForeColor = System.Drawing.SystemColors.ControlLight;
