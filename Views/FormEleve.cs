@@ -65,7 +65,7 @@ namespace Nozel.Views
             eleve.Adresse= adresse.Text;
             if (eleve.IdEleve == 0)
             {
-                eleveControl.InsertEleve(eleve);
+                eleveControl.InsertEleve(eleve,AnneeController.FindCurrent().IdAnnee);
                 clCtrl.addOneEleve(classe.Text);
             }
             else

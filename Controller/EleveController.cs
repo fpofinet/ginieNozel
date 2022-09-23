@@ -16,15 +16,15 @@ namespace Nozel.Controller
 
         }
 
-        public void InsertEleve(Eleve e)
+        public void InsertEleve(Eleve e,int annee)
         {
             string matri = NewMatricule();
             try
             {
                 con.getConnexion().Open();
                 SQLiteCommand cmd = new SQLiteCommand(con.getConnexion());
-                cmd.CommandText = "INSERT INTO eleve (matricule,nom,prenom,dateNaiss,sexe,idClasse,nomTuteur,contactTuteur,adresse) " +
-                                  "VALUES (@matricule,@nom,@prenom,@dateNaiss,@sexe,@idClasse,@nomTuteur,@contactTuteur,@adresse)";
+                cmd.CommandText = "INSERT INTO eleve (matricule,nom,prenom,dateNaiss,sexe,idClasse,nomTuteur,contactTuteur,adresse,idAnnee) " +
+                                  "VALUES (@matricule,@nom,@prenom,@dateNaiss,@sexe,@idClasse,@nomTuteur,@contactTuteur,@adresse,@annee)";
                 Console.WriteLine(matri);
                 cmd.Parameters.AddWithValue(@"matricule", matri);
                 cmd.Parameters.AddWithValue(@"nom",e.Nom);
@@ -35,13 +35,13 @@ namespace Nozel.Controller
                 cmd.Parameters.AddWithValue(@"nomTuteur", e.NomTuteur);
                 cmd.Parameters.AddWithValue(@"contactTuteur", e.ContactTuteur);
                 cmd.Parameters.AddWithValue(@"adresse", e.Adresse);
+                cmd.Parameters.AddWithValue(@"annee", annee);
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
             }
             catch (Exception ex)
             {
-                Utils.Utils.AddLog("[erreur]" + ex.Message);
-                //Console.WriteLine(ex.Message);
+                Utils.Utils.AddLog("[erreur] " + ex.Message);
             }
             con.getConnexion().Close();
         }
@@ -67,8 +67,7 @@ namespace Nozel.Controller
             }
             catch (Exception ex)
             {
-                Utils.Utils.AddLog("[erreur]" + ex.Message);
-                //Console.WriteLine(ex.Message);
+                Utils.Utils.AddLog("[erreur]  " + ex.Message);
             }
             con.getConnexion().Close();
         }
@@ -86,8 +85,7 @@ namespace Nozel.Controller
             }
             catch (Exception ex)
             {
-                Utils.Utils.AddLog("[erreur]" + ex.Message);
-                //Console.WriteLine(ex.Message);
+                Utils.Utils.AddLog("[erreur]  " + ex.Message);
             }
             con.getConnexion().Close();
         }
@@ -116,7 +114,6 @@ namespace Nozel.Controller
             }
             rd.Close();
             con.getConnexion().Close();
-
             return eleves;
         }
 
@@ -160,8 +157,6 @@ namespace Nozel.Controller
             Classe cl = new Classe();
             ClasseController clc= new ClasseController();
             cl = clc.FindByDesignation(classe);
-
-            
             con.getConnexion().Open();
             String stmt = "SELECT * FROM eleve WHERE idClasse=@id";
             SQLiteCommand cmder = new SQLiteCommand(stmt, con.getConnexion());
@@ -181,7 +176,34 @@ namespace Nozel.Controller
             }
             rd.Close();
             con.getConnexion().Close();
+            return eleves;
+        }
 
+        public List<Eleve> FindAllByAnnee(string annee)
+        {
+            List<Eleve> eleves = new List<Eleve>();
+            Annee an = new Annee();
+            AnneeController anc = new AnneeController();
+            an = anc.FindByAnne(annee);
+            con.getConnexion().Open();
+            String stmt = "SELECT * FROM eleve WHERE idAnnee=@id";
+            SQLiteCommand cmder = new SQLiteCommand(stmt, con.getConnexion());
+            cmder.Parameters.AddWithValue(@"id", an.IdAnnee);
+            SQLiteDataReader rd = cmder.ExecuteReader();
+            while (rd.Read())
+            {
+                Eleve el = new Eleve();
+                el.IdEleve = rd.GetInt32(0);
+                el.Matricule = rd.GetString(1);
+                el.Nom = rd.GetString(2);
+                el.Prenom = rd.GetString(3);
+                el.DateNaiss = rd.GetString(4);
+                el.Sexe = rd.GetString(5);
+                el.IdClasse = rd.GetInt32(6);
+                eleves.Add(el);
+            }
+            rd.Close();
+            con.getConnexion().Close();
             return eleves;
         }
 

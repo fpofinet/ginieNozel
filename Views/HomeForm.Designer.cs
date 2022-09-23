@@ -286,6 +286,7 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(454, 160);
             this.panel6.TabIndex = 6;
+            this.panel6.Click += new System.EventHandler(this.param_click);
             // 
             // pictureBox6
             // 
@@ -296,6 +297,7 @@
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 2;
             this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.param_click);
             // 
             // label3
             // 
@@ -306,6 +308,7 @@
             this.label3.Size = new System.Drawing.Size(150, 37);
             this.label3.TabIndex = 0;
             this.label3.Text = "AUTRES";
+            this.label3.Click += new System.EventHandler(this.param_click);
             // 
             // HomeForm
             // 

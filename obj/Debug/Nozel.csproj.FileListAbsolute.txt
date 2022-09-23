@@ -23,3 +23,5 @@ C:\Users\pc\Projects\Nozel\obj\Debug\Nozel.Views.ListeEleve.resources
 C:\Users\pc\Projects\Nozel\obj\Debug\Nozel.Views.Recouvrement.resources
 C:\Users\pc\Projects\Nozel\obj\Debug\Nozel.Views.Recu.resources
 C:\Users\pc\Projects\Nozel\obj\Debug\Nozel.Views.FicheEleve.resources
+C:\Users\pc\Projects\Nozel\obj\Debug\Nozel.Views.ParametreForm.resources
+C:\Users\pc\Projects\Nozel\obj\Debug\Nozel.Views.anneeSF.resources

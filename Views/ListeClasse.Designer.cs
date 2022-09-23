@@ -51,7 +51,7 @@
             // 
             this.AjoutClasseBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
             this.AjoutClasseBtn.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AjoutClasseBtn.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.AjoutClasseBtn.ForeColor = System.Drawing.SystemColors.Control;
             this.AjoutClasseBtn.Location = new System.Drawing.Point(411, 137);
             this.AjoutClasseBtn.Name = "AjoutClasseBtn";
             this.AjoutClasseBtn.Size = new System.Drawing.Size(180, 52);
@@ -65,7 +65,7 @@
             this.panel1.Controls.Add(this.classeDataGrid);
             this.panel1.Location = new System.Drawing.Point(408, 224);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1061, 568);
+            this.panel1.Size = new System.Drawing.Size(1061, 678);
             this.panel1.TabIndex = 2;
             // 
             // classeDataGrid
@@ -88,7 +88,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.Desktop;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.classeDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.classeDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.classeDataGrid.ColumnHeadersHeight = 48;
             this.classeDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.designation,
@@ -96,11 +96,12 @@
             this.effectif,
             this.modifier,
             this.supprimer});
+            this.classeDataGrid.EnableHeadersVisualStyles = false;
             this.classeDataGrid.Location = new System.Drawing.Point(3, 3);
             this.classeDataGrid.Name = "classeDataGrid";
             this.classeDataGrid.ReadOnly = true;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Transparent;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -112,7 +113,7 @@
             this.classeDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.classeDataGrid.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.classeDataGrid.RowTemplate.Height = 32;
-            this.classeDataGrid.Size = new System.Drawing.Size(1055, 562);
+            this.classeDataGrid.Size = new System.Drawing.Size(1055, 672);
             this.classeDataGrid.TabIndex = 0;
             this.classeDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.classeDataGrid_CellContentClick);
             // 
@@ -198,7 +199,7 @@
             this.AutoScroll = true;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(195)))), ((int)(((byte)(206)))));
-            this.ClientSize = new System.Drawing.Size(1779, 796);
+            this.ClientSize = new System.Drawing.Size(1779, 914);
             this.Controls.Add(this.listeClasseHead);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.AjoutClasseBtn);

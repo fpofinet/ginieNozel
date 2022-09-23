@@ -5,13 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Nozel.Controller;
+using Nozel.Models;
 
 namespace Utils
 {
     internal class Utils
     {
         public static Form activeForm;
-        
+        //public static Annee anneeCourante = AnneeController.FindCurrent();
        
     public static void Open(Form child,Panel parent)
         {
@@ -64,7 +66,7 @@ namespace Utils
                 File.Create(myFile);
             }
 
-            File.AppendAllText(myFile, message+DateTime.Now + Environment.NewLine);
+            File.AppendAllText(myFile, message+"  "+DateTime.Now + Environment.NewLine);
         }
     }
 }

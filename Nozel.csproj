@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\AnneeController.cs" />
     <Compile Include="Controller\ClasseController.cs" />
     <Compile Include="Controller\Connexion.cs" />
     <Compile Include="Controller\EleveController.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Annee.cs" />
     <Compile Include="Models\Scolarite.cs" />
     <Compile Include="Models\Tranche.cs" />
     <Compile Include="Utils.cs" />
@@ -71,11 +73,23 @@
     <Compile Include="Views\AjoutClasse.Designer.cs">
       <DependentUpon>AjoutClasse.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\anneeSF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\anneeSF.Designer.cs">
+      <DependentUpon>anneeSF.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FicheEleve.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\FicheEleve.Designer.cs">
       <DependentUpon>FicheEleve.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ParametreForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ParametreForm.Designer.cs">
+      <DependentUpon>ParametreForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Recu.cs">
       <SubType>Form</SubType>
@@ -141,8 +155,14 @@
     <EmbeddedResource Include="Views\AjoutClasse.resx">
       <DependentUpon>AjoutClasse.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\anneeSF.resx">
+      <DependentUpon>anneeSF.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FicheEleve.resx">
       <DependentUpon>FicheEleve.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ParametreForm.resx">
+      <DependentUpon>ParametreForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Recu.resx">
       <DependentUpon>Recu.cs</DependentUpon>

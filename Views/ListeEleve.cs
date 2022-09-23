@@ -16,19 +16,27 @@ namespace Nozel.Views
     {
         private EleveController eleveControl = new EleveController();
         private ClasseController clCtrl = new ClasseController();
+        private AnneeController anneeControl = new AnneeController();   
        
         public ListeEleve()
         {
             List<Classe> cla;
+            List<Annee> ans;
             InitializeComponent();
             LoadData();
             cla = clCtrl.FindAll();
+            ans = anneeControl.FindAll();
             classeBox.Items.Add("Tous");
+            anneeCB.Items.Add("Tous");
+            foreach (Annee annee in ans)
+            {
+                anneeCB.Items.Add(annee.Anne);
+            }
+            
             foreach (Classe c in cla)
             {
                 classeBox.Items.Add(c.Designation);
-            }
-            
+            }  
         }
 
         private void LoadData()
@@ -57,8 +65,7 @@ namespace Nozel.Views
         }
 
         private void eleveDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
+        { 
             if (e.RowIndex >= 0 && e.ColumnIndex == eleveDataGrid.Columns["Modifier"].Index)
             {
                 Utils.Utils.AddLog("boutton modifier eleve click");
@@ -125,9 +132,36 @@ namespace Nozel.Views
                 result = eleveControl.FindAllByClasse(item);
             }
             
-
             eleveDataGrid.Rows.Clear();
             foreach (Eleve elt in result)
+            {
+                eleveDataGrid.Rows.Add();
+                eleveDataGrid.Rows[eleveDataGrid.Rows.Count - 1].Cells["id"].Value = elt.IdEleve;
+                eleveDataGrid.Rows[eleveDataGrid.Rows.Count - 1].Cells["matricule"].Value = elt.Matricule;
+                eleveDataGrid.Rows[eleveDataGrid.Rows.Count - 1].Cells["nom"].Value = elt.Nom;
+                eleveDataGrid.Rows[eleveDataGrid.Rows.Count - 1].Cells["prenom"].Value = elt.Prenom;
+                eleveDataGrid.Rows[eleveDataGrid.Rows.Count - 1].Cells["sexe"].Value = elt.Sexe;
+                eleveDataGrid.Rows[eleveDataGrid.Rows.Count - 1].Cells["age"].Value = Utils.Utils.CalcAge(elt.DateNaiss);
+                eleveDataGrid.Rows[eleveDataGrid.Rows.Count - 1].Cells["dateNaiss"].Value = elt.DateNaiss;
+                eleveDataGrid.Rows[eleveDataGrid.Rows.Count - 1].Cells["classe"].Value = clCtrl.FindById(elt.IdClasse).Designation;
+            }
+        }
+
+        private void anneeCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string item = anneeCB.SelectedItem.ToString();
+            List<Eleve> data = new List<Eleve>();
+            if (item.ToUpper() == "TOUS")
+            {
+                data = eleveControl.FindAll();
+            }
+            else
+            {
+                data = eleveControl.FindAllByAnnee(item);
+            }
+
+            eleveDataGrid.Rows.Clear();
+            foreach (Eleve elt in data)
             {
                 eleveDataGrid.Rows.Add();
                 eleveDataGrid.Rows[eleveDataGrid.Rows.Count - 1].Cells["id"].Value = elt.IdEleve;

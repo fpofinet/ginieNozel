@@ -61,5 +61,13 @@ namespace Nozel.Views
             Utils.Utils.AddLog("recouvrement card  click");
             Utils.Utils.Open(new Recouvrement(), Main.mainPanel);
         }
+
+  
+
+        private void param_click(object sender, EventArgs e)
+        {
+            Utils.Utils.AddLog("recouvrement card  click");
+            Utils.Utils.Open(new ParametreForm(), Main.mainPanel);
+        }
     }
 }
